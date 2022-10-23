@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Helper - 复制\**" />
+    <EmbeddedResource Remove="Helper - 复制\**" />
+    <None Remove="Helper - 复制\**" />
+    <Page Remove="Helper - 复制\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="HandyControl" Version="3.3.0" />
+  </ItemGroup>
+
+</Project>

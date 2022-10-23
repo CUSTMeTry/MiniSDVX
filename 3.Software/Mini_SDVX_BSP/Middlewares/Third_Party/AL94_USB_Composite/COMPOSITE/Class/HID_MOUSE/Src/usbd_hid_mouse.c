@@ -1,42 +1,42 @@
 /**
- ******************************************************************************
- * @file    usbd_hid.c
- * @author  MCD Application Team
- * @brief   This file provides the HID core functions.
- *
- * @verbatim
- *
- *          ===================================================================
- *                                HID Class  Description
- *          ===================================================================
- *           This module manages the HID class V1.11 following the "Device Class Definition
- *           for Human Interface Devices (HID) Version 1.11 Jun 27, 2001".
- *           This driver implements the following aspects of the specification:
- *             - The Boot Interface Subclass
- *             - The Mouse protocol
- *             - Usage Page : Generic Desktop
- *             - Usage : Joystick
- *             - Collection : Application
- *
- * @note     In HS mode and when the DMA is used, all variables and data structures
- *           dealing with the DMA during the transaction process should be 32-bit aligned.
- *
- *
- *  @endverbatim
- *
- ******************************************************************************
- * @attention
- *
- * <h2><center>&copy; Copyright (c) 2015 STMicroelectronics.
- * All rights reserved.</center></h2>
- *
- * This software component is licensed by ST under Ultimate Liberty license
- * SLA0044, the "License"; You may not use this file except in compliance with
- * the License. You may obtain a copy of the License at:
- *                      www.st.com/SLA0044
- *
- ******************************************************************************
- */
+  ******************************************************************************
+  * @file    usbd_hid.c
+  * @author  MCD Application Team
+  * @brief   This file provides the HID core functions.
+  *
+  * @verbatim
+  *
+  *          ===================================================================
+  *                                HID Class  Description
+  *          ===================================================================
+  *           This module manages the HID class V1.11 following the "Device Class Definition
+  *           for Human Interface Devices (HID) Version 1.11 Jun 27, 2001".
+  *           This driver implements the following aspects of the specification:
+  *             - The Boot Interface Subclass
+  *             - The Mouse protocol
+  *             - Usage Page : Generic Desktop
+  *             - Usage : Joystick
+  *             - Collection : Application
+  *
+  * @note     In HS mode and when the DMA is used, all variables and data structures
+  *           dealing with the DMA during the transaction process should be 32-bit aligned.
+  *
+  *
+  *  @endverbatim
+  *
+  ******************************************************************************
+  * @attention
+  *
+  * <h2><center>&copy; Copyright (c) 2015 STMicroelectronics.
+  * All rights reserved.</center></h2>
+  *
+  * This software component is licensed by ST under Ultimate Liberty license
+  * SLA0044, the "License"; You may not use this file except in compliance with
+  * the License. You may obtain a copy of the License at:
+  *                      www.st.com/SLA0044
+  *
+  ******************************************************************************
+  */
 
 /* BSPDependencies
 - "stm32xxxxx_{eval}{discovery}{nucleo_144}.c"
@@ -56,39 +56,39 @@ uint8_t HID_MOUSE_ITF_NBR = _HID_MOUSE_ITF_NBR;
 uint8_t HID_MOUSE_STR_DESC_IDX = _HID_MOUSE_STR_DESC_IDX;
 
 /** @addtogroup STM32_USB_DEVICE_LIBRARY
- * @{
- */
+  * @{
+  */
 
 /** @defgroup USBD_HID
- * @brief usbd core module
- * @{
- */
+  * @brief usbd core module
+  * @{
+  */
 
 /** @defgroup USBD_HID_Private_TypesDefinitions
- * @{
- */
+  * @{
+  */
 /**
- * @}
- */
+  * @}
+  */
 
 /** @defgroup USBD_HID_Private_Defines
- * @{
- */
+  * @{
+  */
 
 /**
- * @}
- */
+  * @}
+  */
 
 /** @defgroup USBD_HID_Private_Macros
- * @{
- */
+  * @{
+  */
 /**
- * @}
- */
+  * @}
+  */
 
 /** @defgroup USBD_HID_Private_FunctionPrototypes
- * @{
- */
+  * @{
+  */
 
 static uint8_t USBD_HID_Init(USBD_HandleTypeDef *pdev, uint8_t cfgidx);
 static uint8_t USBD_HID_DeInit(USBD_HandleTypeDef *pdev, uint8_t cfgidx);
@@ -101,12 +101,12 @@ static uint8_t *USBD_HID_GetOtherSpeedCfgDesc(uint16_t *length);
 static uint8_t *USBD_HID_GetDeviceQualifierDesc(uint16_t *length);
 
 /**
- * @}
- */
+  * @}
+  */
 
 /** @defgroup USBD_HID_Private_Variables
- * @{
- */
+  * @{
+  */
 
 static USBD_HID_HandleTypeDef USBD_HID_Instance;
 
@@ -262,47 +262,49 @@ __ALIGN_BEGIN static uint8_t USBD_HID_DeviceQualifierDesc[USB_LEN_DEV_QUALIFIER_
 
 __ALIGN_BEGIN static uint8_t HID_MOUSE_ReportDesc[HID_MOUSE_REPORT_DESC_SIZE] __ALIGN_END =
     {
-        0x05, 0x01, // USAGE_PAGE (Generic Desktop)
-        0x09, 0x02, // USAGE (Mouse)
-        0xa1, 0x01, // COLLECTION (Application)
-        0x09, 0x01, //   USAGE (Pointer)
-        0x05, 0x09, //     USAGE_PAGE (Button)
-        0x19, 0x01, //     USAGE_MINIMUM (Button 1)
-        0x29, 0x03, //     USAGE_MAXIMUM (Button 3)
-        0x15, 0x00, //     LOGICAL_MINIMUM (0)
-        0x25, 0x01, //     LOGICAL_MAXIMUM (1)
-        0x95, 0x03, //     REPORT_COUNT (3)
-        0x75, 0x01, //     REPORT_SIZE (1)
-        0x81, 0x02, //     INPUT (Data,Var,Abs)
-        0x95, 0x01, //     REPORT_COUNT (1)
-        0x75, 0x05, //     REPORT_SIZE (5)
-        0x81, 0x03, //     INPUT (Cnst,Var,Abs)
-        0x05, 0x01, //     USAGE_PAGE (Generic Desktop)
-        0x09, 0x30, //     USAGE (X)
-        0x09, 0x31, //     USAGE (Y)
-        0x09, 0x38, //     USAGE (Wheel)
-        0x15, 0x81, //     LOGICAL_MINIMUM (-127)
-        0x25, 0x7f, //     LOGICAL_MAXIMUM (127)
-        0x75, 0x08, //     REPORT_SIZE (8)
-        0x95, 0x03, //     REPORT_COUNT (3)
-        0x81, 0x06, //     INPUT (Data,Var,Rel)
-        0xc0};
+         //-----------------------鼠标部分报告描述符----------------------------  
+    0x05, 0x01,                    // USAGE_PAGE (Generic Desktop)  
+    0x09, 0x02,                    // USAGE (Mouse)  
+    0xa1, 0x01,                    // COLLECTION (Application)  
+    0x09, 0x01,                    //   USAGE (Pointer)  
+    0x05, 0x09,                    //     USAGE_PAGE (Button)  
+    0x19, 0x01,                    //     USAGE_MINIMUM (Button 1)  
+    0x29, 0x03,                    //     USAGE_MAXIMUM (Button 3)  
+    0x15, 0x00,                    //     LOGICAL_MINIMUM (0)  
+    0x25, 0x01,                    //     LOGICAL_MAXIMUM (1)  
+    0x95, 0x03,                    //     REPORT_COUNT (3)  
+    0x75, 0x01,                    //     REPORT_SIZE (1)  
+    0x81, 0x02,                    //     INPUT (Data,Var,Abs)  
+    0x95, 0x01,                    //     REPORT_COUNT (1)  
+    0x75, 0x05,                    //     REPORT_SIZE (5)  
+    0x81, 0x03,                    //     INPUT (Cnst,Var,Abs)  
+    0x05, 0x01,                    //     USAGE_PAGE (Generic Desktop)  
+    0x09, 0x30,                    //     USAGE (X)  
+    0x09, 0x31,                    //     USAGE (Y)  
+    0x09, 0x38,                    //     USAGE (Wheel)  
+    0x15, 0x81,                    //     LOGICAL_MINIMUM (-127)  
+    0x25, 0x7f,                    //     LOGICAL_MAXIMUM (127)  
+    0x75, 0x08,                    //     REPORT_SIZE (8)  
+    0x95, 0x03,                    //     REPORT_COUNT (3)  
+    0x81, 0x06,                    //     INPUT (Data,Var,Rel)  
+    0xc0                          //   END_COLLECTION  
+    };
 
 /**
- * @}
- */
+  * @}
+  */
 
 /** @defgroup USBD_HID_Private_Functions
- * @{
- */
+  * @{
+  */
 
 /**
- * @brief  USBD_HID_Init
- *         Initialize the HID interface
- * @param  pdev: device instance
- * @param  cfgidx: Configuration index
- * @retval status
- */
+  * @brief  USBD_HID_Init
+  *         Initialize the HID interface
+  * @param  pdev: device instance
+  * @param  cfgidx: Configuration index
+  * @retval status
+  */
 static uint8_t USBD_HID_Init(USBD_HandleTypeDef *pdev, uint8_t cfgidx)
 {
   UNUSED(cfgidx);
@@ -338,12 +340,12 @@ static uint8_t USBD_HID_Init(USBD_HandleTypeDef *pdev, uint8_t cfgidx)
 }
 
 /**
- * @brief  USBD_HID_DeInit
- *         DeInitialize the HID layer
- * @param  pdev: device instance
- * @param  cfgidx: Configuration index
- * @retval status
- */
+  * @brief  USBD_HID_DeInit
+  *         DeInitialize the HID layer
+  * @param  pdev: device instance
+  * @param  cfgidx: Configuration index
+  * @retval status
+  */
 static uint8_t USBD_HID_DeInit(USBD_HandleTypeDef *pdev, uint8_t cfgidx)
 {
   UNUSED(cfgidx);
@@ -366,12 +368,12 @@ static uint8_t USBD_HID_DeInit(USBD_HandleTypeDef *pdev, uint8_t cfgidx)
 }
 
 /**
- * @brief  USBD_HID_Setup
- *         Handle the HID specific requests
- * @param  pdev: instance
- * @param  req: usb requests
- * @retval status
- */
+  * @brief  USBD_HID_Setup
+  *         Handle the HID specific requests
+  * @param  pdev: instance
+  * @param  req: usb requests
+  * @retval status
+  */
 static uint8_t USBD_HID_Setup(USBD_HandleTypeDef *pdev, USBD_SetupReqTypedef *req)
 {
   USBD_HID_HandleTypeDef *hhid = (USBD_HID_HandleTypeDef *)pdev->pClassData_HID_Mouse;
@@ -491,12 +493,12 @@ static uint8_t USBD_HID_Setup(USBD_HandleTypeDef *pdev, USBD_SetupReqTypedef *re
 }
 
 /**
- * @brief  USBD_HID_GetCfgFSDesc
- *         return FS configuration descriptor
- * @param  speed : current device speed
- * @param  length : pointer data length
- * @retval pointer to descriptor buffer
- */
+  * @brief  USBD_HID_GetCfgFSDesc
+  *         return FS configuration descriptor
+  * @param  speed : current device speed
+  * @param  length : pointer data length
+  * @retval pointer to descriptor buffer
+  */
 static uint8_t *USBD_HID_GetFSCfgDesc(uint16_t *length)
 {
   *length = (uint16_t)sizeof(USBD_HID_CfgFSDesc);
@@ -505,12 +507,12 @@ static uint8_t *USBD_HID_GetFSCfgDesc(uint16_t *length)
 }
 
 /**
- * @brief  USBD_HID_GetCfgHSDesc
- *         return HS configuration descriptor
- * @param  speed : current device speed
- * @param  length : pointer data length
- * @retval pointer to descriptor buffer
- */
+  * @brief  USBD_HID_GetCfgHSDesc
+  *         return HS configuration descriptor
+  * @param  speed : current device speed
+  * @param  length : pointer data length
+  * @retval pointer to descriptor buffer
+  */
 static uint8_t *USBD_HID_GetHSCfgDesc(uint16_t *length)
 {
   *length = (uint16_t)sizeof(USBD_HID_CfgHSDesc);
@@ -519,12 +521,12 @@ static uint8_t *USBD_HID_GetHSCfgDesc(uint16_t *length)
 }
 
 /**
- * @brief  USBD_HID_GetOtherSpeedCfgDesc
- *         return other speed configuration descriptor
- * @param  speed : current device speed
- * @param  length : pointer data length
- * @retval pointer to descriptor buffer
- */
+  * @brief  USBD_HID_GetOtherSpeedCfgDesc
+  *         return other speed configuration descriptor
+  * @param  speed : current device speed
+  * @param  length : pointer data length
+  * @retval pointer to descriptor buffer
+  */
 static uint8_t *USBD_HID_GetOtherSpeedCfgDesc(uint16_t *length)
 {
   *length = (uint16_t)sizeof(USBD_HID_CfgFSDesc);
@@ -533,12 +535,12 @@ static uint8_t *USBD_HID_GetOtherSpeedCfgDesc(uint16_t *length)
 }
 
 /**
- * @brief  USBD_HID_DataIn
- *         handle data IN Stage
- * @param  pdev: device instance
- * @param  epnum: endpoint index
- * @retval status
- */
+  * @brief  USBD_HID_DataIn
+  *         handle data IN Stage
+  * @param  pdev: device instance
+  * @param  epnum: endpoint index
+  * @retval status
+  */
 static uint8_t USBD_HID_DataIn(USBD_HandleTypeDef *pdev, uint8_t epnum)
 {
   UNUSED(epnum);
@@ -550,11 +552,11 @@ static uint8_t USBD_HID_DataIn(USBD_HandleTypeDef *pdev, uint8_t epnum)
 }
 
 /**
- * @brief  DeviceQualifierDescriptor
- *         return Device Qualifier descriptor
- * @param  length : pointer data length
- * @retval pointer to descriptor buffer
- */
+  * @brief  DeviceQualifierDescriptor
+  *         return Device Qualifier descriptor
+  * @param  length : pointer data length
+  * @retval pointer to descriptor buffer
+  */
 static uint8_t *USBD_HID_GetDeviceQualifierDesc(uint16_t *length)
 {
   *length = (uint16_t)sizeof(USBD_HID_DeviceQualifierDesc);
@@ -563,12 +565,12 @@ static uint8_t *USBD_HID_GetDeviceQualifierDesc(uint16_t *length)
 }
 
 /**
- * @brief  USBD_HID_SendReport
- *         Send HID Report
- * @param  pdev: device instance
- * @param  buff: pointer to report
- * @retval status
- */
+  * @brief  USBD_HID_SendReport
+  *         Send HID Report
+  * @param  pdev: device instance
+  * @param  buff: pointer to report
+  * @retval status
+  */
 uint8_t USBD_HID_Mouse_SendReport(USBD_HandleTypeDef *pdev, uint8_t *report, uint16_t len)
 {
   USBD_HID_HandleTypeDef *hhid = (USBD_HID_HandleTypeDef *)pdev->pClassData_HID_Mouse;
@@ -591,11 +593,11 @@ uint8_t USBD_HID_Mouse_SendReport(USBD_HandleTypeDef *pdev, uint8_t *report, uin
 }
 
 /**
- * @brief  USBD_HID_GetPollingInterval
- *         return polling interval from endpoint descriptor
- * @param  pdev: device instance
- * @retval polling interval
- */
+  * @brief  USBD_HID_GetPollingInterval
+  *         return polling interval from endpoint descriptor
+  * @param  pdev: device instance
+  * @retval polling interval
+  */
 uint32_t USBD_HID_Mouse_GetPollingInterval(USBD_HandleTypeDef *pdev)
 {
   uint32_t polling_interval;
@@ -630,15 +632,15 @@ void USBD_Update_HID_Mouse_DESC(uint8_t *desc, uint8_t itf_no, uint8_t in_ep, ui
 }
 
 /**
- * @}
- */
+  * @}
+  */
 
 /**
- * @}
- */
+  * @}
+  */
 
 /**
- * @}
- */
+  * @}
+  */
 
 /************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/

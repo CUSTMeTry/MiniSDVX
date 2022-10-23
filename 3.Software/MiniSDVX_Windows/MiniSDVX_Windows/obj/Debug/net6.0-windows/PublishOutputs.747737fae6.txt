@@ -1,0 +1,6 @@
+E:\BaiduSyncdisk\Project\Development\Hardware\MiniSDVX\3.Software\MiniSDVX_Windows\MiniSDVX_Windows\bin\Release\net6.0-windows\publish\MiniSDVX_Windows.exe
+E:\BaiduSyncdisk\Project\Development\Hardware\MiniSDVX\3.Software\MiniSDVX_Windows\MiniSDVX_Windows\bin\Release\net6.0-windows\publish\MiniSDVX_Windows.dll
+E:\BaiduSyncdisk\Project\Development\Hardware\MiniSDVX\3.Software\MiniSDVX_Windows\MiniSDVX_Windows\bin\Release\net6.0-windows\publish\MiniSDVX_Windows.deps.json
+E:\BaiduSyncdisk\Project\Development\Hardware\MiniSDVX\3.Software\MiniSDVX_Windows\MiniSDVX_Windows\bin\Release\net6.0-windows\publish\MiniSDVX_Windows.runtimeconfig.json
+E:\BaiduSyncdisk\Project\Development\Hardware\MiniSDVX\3.Software\MiniSDVX_Windows\MiniSDVX_Windows\bin\Release\net6.0-windows\publish\MiniSDVX_Windows.pdb
+E:\BaiduSyncdisk\Project\Development\Hardware\MiniSDVX\3.Software\MiniSDVX_Windows\MiniSDVX_Windows\bin\Release\net6.0-windows\publish\HandyControl.dll

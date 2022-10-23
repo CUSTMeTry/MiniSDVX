@@ -41,7 +41,7 @@ extern "C" {
 /** @defgroup USBD_HID_Exported_Defines
   * @{
   */
-#define HID_MOUSE_STR_DESC                         "STM32 USB MOUSE"
+#define HID_MOUSE_STR_DESC                         "MiniSDVX POINTER"
 
 #define HID_EPIN_SIZE                              0x04U
 

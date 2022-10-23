@@ -1,25 +1,26 @@
 /* USER CODE BEGIN Header */
 /**
-  ******************************************************************************
-  * @file           : main.c
-  * @brief          : Main program body
-  ******************************************************************************
-  * @attention
-  *
-  * Copyright (c) 2022 STMicroelectronics.
-  * All rights reserved.
-  *
-  * This software is licensed under terms that can be found in the LICENSE file
-  * in the root directory of this software component.
-  * If no LICENSE file comes with this software, it is provided AS-IS.
-  *
-  ******************************************************************************
-  */
+ ******************************************************************************
+ * @file           : main.c
+ * @brief          : Main program body
+ ******************************************************************************
+ * @attention
+ *
+ * Copyright (c) 2022 STMicroelectronics.
+ * All rights reserved.
+ *
+ * This software is licensed under terms that can be found in the LICENSE file
+ * in the root directory of this software component.
+ * If no LICENSE file comes with this software, it is provided AS-IS.
+ *
+ ******************************************************************************
+ */
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 #include "adc.h"
 #include "dma.h"
+#include "i2c.h"
 #include "spi.h"
 #include "tim.h"
 #include "usb_otg.h"
@@ -31,7 +32,7 @@
 #include "usbd_hid_keyboard.h"
 #include "usbd_hid_mouse.h"
 #include "usbd_cdc_acm.h"
-
+//#include "bsp_24c02.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -50,7 +51,7 @@
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
-extern USBD_HandleTypeDef hUsbDevice;
+
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -61,13 +62,10 @@ void SystemClock_Config(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-void print(char *str)
+void debug(uint8_t *c, uint32_t len)
 {
-    uint16_t c = 0;
-    while (str[c] != '\0')
-        c++;
-    USBD_CDC_SetTxBuffer(0, &hUsbDevice,  (uint8_t *)str, c);
-    USBD_CDC_TransmitPacket(0, &hUsbDevice);
+  USBD_CDC_SetTxBuffer(0, &hUsbDevice, c, len);
+  USBD_CDC_TransmitPacket(0, &hUsbDevice);
 }
 /* USER CODE END 0 */
 
@@ -92,6 +90,7 @@ int main(void)
 
   /* Configure the system clock */
   SystemClock_Config();
+
   /* USER CODE BEGIN SysInit */
 
   /* USER CODE END SysInit */
@@ -104,28 +103,45 @@ int main(void)
   MX_TIM4_Init();
   MX_TIM1_Init();
   MX_SPI3_Init();
-  MX_TIM3_Init();
   MX_USB_OTG_FS_PCD_Init();
+  MX_I2C1_Init();
+  MX_TIM3_Init();
   /* USER CODE BEGIN 2 */
-	MX_USB_DEVICE_Init();
+  MX_USB_DEVICE_Init();
   uint8_t keyboardReport[8] = {0x00, 0x00, 0x05, 0x00, 0x00, 0x00, 0x00, 0x00};
   uint8_t mouseReport[4] = {0x00, 0x05, 0x00, 0x00};
   uint8_t keyboardReportNull[8] = {0};
+  uint8_t data[8] = {0};
+
+  uint8_t data2[8] = {0x54, 0x78, 0x05, 0x00, 0x00, 0x00, 0x20, 0x03};
+  // AT24CXX_Init();
+
+  // while (AT24CXX_Check())
+  // {
+  //   USBD_CDC_SetTxBuffer(0, &hUsbDevice, (uint8_t *)"AT24CXX Not Found", 16);
+  //   USBD_CDC_TransmitPacket(0, &hUsbDevice);
+  //   HAL_Delay(1000);
+  // }
+
+  HAL_I2C_Mem_Write(&hi2c1, 0xA1, 0, I2C_MEMADD_SIZE_8BIT, data2, 8, 1000);
+
+  // AT24C02_write(0x00, data2, 8);
+  // AT24C02_read(0x00, data, 8);
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-  
-    /* USER CODE END WHILE */
-    //USBD_CDC_SetTxBuffer(0, &hUsbDevice, keyboardReport, 8);
-    //USBD_CDC_TransmitPacket(0, &hUsbDevice);
-    print("Send Keyboard Report\n");
-    USBD_HID_Mouse_SendReport(&hUsbDevice, mouseReport, 4);
-    //USBD_HID_Keybaord_SendReport(&hUsbDevice, keyboardReport, 8);
-    //USBD_HID_Keybaord_SendReport(&hUsbDevice, keyboardReportNull, 8);
+    // HAL_I2C_Mem_Read(&hi2c1, 0xA0, 0, I2C_MEMADD_SIZE_8BIT, data, 8, 1000);
+
+    // Software_I2C_WriteByte("0xA0");
+    //  print("satrt");
+    //   print("SEND DATA\n");
     HAL_Delay(1000);
+
+    /* USER CODE END WHILE */
+
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */

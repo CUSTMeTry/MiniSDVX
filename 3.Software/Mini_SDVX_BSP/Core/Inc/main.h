@@ -53,6 +53,7 @@ extern "C" {
 void Error_Handler(void);
 
 /* USER CODE BEGIN EFP */
+void debug(uint8_t *c, uint32_t len);
 
 /* USER CODE END EFP */
 

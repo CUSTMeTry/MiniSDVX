@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <_LastSelectedProfileId>E:\BaiduSyncdisk\Project\Development\Hardware\MiniSDVX\3.Software\MiniSDVX_Windows\MiniSDVX_Windows\Properties\PublishProfiles\FolderProfile.pubxml</_LastSelectedProfileId>
+  </PropertyGroup>
+  <ItemGroup>
+    <ApplicationDefinition Update="App.xaml">
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="MainWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Resource\Style\Brush.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Resource\Style\Color.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Resource\Style\Geometry.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Resource\Style\Primary\Magenta.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Resource\Style\Primary\Primary.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Resource\Style\Primary\Violet.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Resource\Style\Style\Style.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Resource\Style\Theme\BaseDark.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Resource\Style\Theme\BaseLight.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+</Project>

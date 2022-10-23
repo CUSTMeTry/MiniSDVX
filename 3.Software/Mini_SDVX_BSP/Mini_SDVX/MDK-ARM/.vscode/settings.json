@@ -3,6 +3,18 @@
         "main.h": "c",
         "usbd_composite.h": "c",
         "usb_device.h": "c",
-        "USBD_HID_KEYBOARD.H": "cpp"
+        "USBD_HID_KEYBOARD.H": "cpp",
+        "bsp_encoder.h": "c",
+        "usbd_ioreq.h": "c",
+        "bsp_key.h": "c",
+        "stm32f4xx_hal.h": "c",
+        "bsp_24c02.h": "c",
+        "usbd_core.h": "c",
+        "usbd_conf.h": "c",
+        "stdlib.h": "c",
+        "i2c.h": "c",
+        "usbd_def.h": "c",
+        "usbd_desc.h": "c",
+        "usb_otg.h": "c"
     }
 }

@@ -1,0 +1,7 @@
+E:\BaiduSyncdisk\Project\Development\Hardware\MiniSDVX\3.Software\MiniSDVX_Windows\MiniSDVX_Windows\bin\Release\net6.0-windows\publish\win-x64\MiniSDVX_Windows.pdb
+E:\BaiduSyncdisk\Project\Development\Hardware\MiniSDVX\3.Software\MiniSDVX_Windows\MiniSDVX_Windows\bin\Release\net6.0-windows\publish\win-x64\D3DCompiler_47_cor3.dll
+E:\BaiduSyncdisk\Project\Development\Hardware\MiniSDVX\3.Software\MiniSDVX_Windows\MiniSDVX_Windows\bin\Release\net6.0-windows\publish\win-x64\PenImc_cor3.dll
+E:\BaiduSyncdisk\Project\Development\Hardware\MiniSDVX\3.Software\MiniSDVX_Windows\MiniSDVX_Windows\bin\Release\net6.0-windows\publish\win-x64\PresentationNative_cor3.dll
+E:\BaiduSyncdisk\Project\Development\Hardware\MiniSDVX\3.Software\MiniSDVX_Windows\MiniSDVX_Windows\bin\Release\net6.0-windows\publish\win-x64\vcruntime140_cor3.dll
+E:\BaiduSyncdisk\Project\Development\Hardware\MiniSDVX\3.Software\MiniSDVX_Windows\MiniSDVX_Windows\bin\Release\net6.0-windows\publish\win-x64\wpfgfx_cor3.dll
+E:\BaiduSyncdisk\Project\Development\Hardware\MiniSDVX\3.Software\MiniSDVX_Windows\MiniSDVX_Windows\bin\Release\net6.0-windows\publish\win-x64\MiniSDVX_Windows.exe

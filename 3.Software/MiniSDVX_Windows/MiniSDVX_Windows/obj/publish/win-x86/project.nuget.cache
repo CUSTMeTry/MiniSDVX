@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "UlNGFYKDvTCv5whkTixCrvIAFA+Ytau+FUJXav226AZqykadOCwZ90IMCx0IBJLCn23r5Y58ZaZXv9HNA7336w==",
+  "success": true,
+  "projectFilePath": "E:\\BaiduSyncdisk\\Project\\Development\\Hardware\\MiniSDVX\\3.Software\\MiniSDVX_Windows\\MiniSDVX_Windows\\MiniSDVX_Windows.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\ijink\\.nuget\\packages\\handycontrol\\3.3.0\\handycontrol.3.3.0.nupkg.sha512",
+    "C:\\Users\\ijink\\.nuget\\packages\\microsoft.netcore.app.runtime.win-x86\\6.0.10\\microsoft.netcore.app.runtime.win-x86.6.0.10.nupkg.sha512",
+    "C:\\Users\\ijink\\.nuget\\packages\\microsoft.windowsdesktop.app.runtime.win-x86\\6.0.10\\microsoft.windowsdesktop.app.runtime.win-x86.6.0.10.nupkg.sha512",
+    "C:\\Users\\ijink\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-x86\\6.0.10\\microsoft.aspnetcore.app.runtime.win-x86.6.0.10.nupkg.sha512"
+  ],
+  "logs": []
+}
