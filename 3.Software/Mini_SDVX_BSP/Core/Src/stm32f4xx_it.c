@@ -52,6 +52,7 @@ extern int8_t RCount;
 uint8_t mouseReport[4] = {0};
 uint8_t keyboardRReport[11] = {0};
 uint8_t keyboardRefrsh[11] = {0};
+uint32_t TickTim5 = 0; 
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -67,6 +68,7 @@ uint8_t keyboardRefrsh[11] = {0};
 /* External variables --------------------------------------------------------*/
 extern DMA_HandleTypeDef hdma_tim4_ch3;
 extern TIM_HandleTypeDef htim3;
+extern TIM_HandleTypeDef htim5;
 extern PCD_HandleTypeDef hpcd_USB_OTG_FS;
 /* USER CODE BEGIN EV */
 
@@ -76,8 +78,8 @@ extern PCD_HandleTypeDef hpcd_USB_OTG_FS;
 /*           Cortex-M4 Processor Interruption and Exception Handlers          */
 /******************************************************************************/
 /**
- * @brief This function handles Non maskable interrupt.
- */
+  * @brief This function handles Non maskable interrupt.
+  */
 void NMI_Handler(void)
 {
   /* USER CODE BEGIN NonMaskableInt_IRQn 0 */
@@ -91,8 +93,8 @@ void NMI_Handler(void)
 }
 
 /**
- * @brief This function handles Hard fault interrupt.
- */
+  * @brief This function handles Hard fault interrupt.
+  */
 void HardFault_Handler(void)
 {
   /* USER CODE BEGIN HardFault_IRQn 0 */
@@ -106,8 +108,8 @@ void HardFault_Handler(void)
 }
 
 /**
- * @brief This function handles Memory management fault.
- */
+  * @brief This function handles Memory management fault.
+  */
 void MemManage_Handler(void)
 {
   /* USER CODE BEGIN MemoryManagement_IRQn 0 */
@@ -121,8 +123,8 @@ void MemManage_Handler(void)
 }
 
 /**
- * @brief This function handles Pre-fetch fault, memory access fault.
- */
+  * @brief This function handles Pre-fetch fault, memory access fault.
+  */
 void BusFault_Handler(void)
 {
   /* USER CODE BEGIN BusFault_IRQn 0 */
@@ -136,8 +138,8 @@ void BusFault_Handler(void)
 }
 
 /**
- * @brief This function handles Undefined instruction or illegal state.
- */
+  * @brief This function handles Undefined instruction or illegal state.
+  */
 void UsageFault_Handler(void)
 {
   /* USER CODE BEGIN UsageFault_IRQn 0 */
@@ -151,8 +153,8 @@ void UsageFault_Handler(void)
 }
 
 /**
- * @brief This function handles System service call via SWI instruction.
- */
+  * @brief This function handles System service call via SWI instruction.
+  */
 void SVC_Handler(void)
 {
   /* USER CODE BEGIN SVCall_IRQn 0 */
@@ -164,8 +166,8 @@ void SVC_Handler(void)
 }
 
 /**
- * @brief This function handles Debug monitor.
- */
+  * @brief This function handles Debug monitor.
+  */
 void DebugMon_Handler(void)
 {
   /* USER CODE BEGIN DebugMonitor_IRQn 0 */
@@ -177,8 +179,8 @@ void DebugMon_Handler(void)
 }
 
 /**
- * @brief This function handles Pendable request for system service.
- */
+  * @brief This function handles Pendable request for system service.
+  */
 void PendSV_Handler(void)
 {
   /* USER CODE BEGIN PendSV_IRQn 0 */
@@ -190,8 +192,8 @@ void PendSV_Handler(void)
 }
 
 /**
- * @brief This function handles System tick timer.
- */
+  * @brief This function handles System tick timer.
+  */
 void SysTick_Handler(void)
 {
   /* USER CODE BEGIN SysTick_IRQn 0 */
@@ -211,15 +213,11 @@ void SysTick_Handler(void)
 /******************************************************************************/
 
 /**
- * @brief This function handles TIM3 global interrupt.
- */
+  * @brief This function handles TIM3 global interrupt.
+  */
 void TIM3_IRQHandler(void)
 {
   /* USER CODE BEGIN TIM3_IRQn 0 */
-
-  /* USER CODE END TIM3_IRQn 0 */
-  HAL_TIM_IRQHandler(&htim3);
-  /* USER CODE BEGIN TIM3_IRQn 1 */
   keyboardGetData();
   if (keyboardBitDecode(keyboardRReport))
   {
@@ -234,13 +232,17 @@ void TIM3_IRQHandler(void)
     RCount = 0;
     USBD_HID_Mouse_SendReport(&hUsbDevice, mouseReport, 4);
   }
+  /* USER CODE END TIM3_IRQn 0 */
+  HAL_TIM_IRQHandler(&htim3);
+  /* USER CODE BEGIN TIM3_IRQn 1 */
+  
 
   /* USER CODE END TIM3_IRQn 1 */
 }
 
 /**
- * @brief This function handles EXTI line[15:10] interrupts.
- */
+  * @brief This function handles EXTI line[15:10] interrupts.
+  */
 void EXTI15_10_IRQHandler(void)
 {
   /* USER CODE BEGIN EXTI15_10_IRQn 0 */
@@ -256,8 +258,8 @@ void EXTI15_10_IRQHandler(void)
 }
 
 /**
- * @brief This function handles DMA1 stream7 global interrupt.
- */
+  * @brief This function handles DMA1 stream7 global interrupt.
+  */
 void DMA1_Stream7_IRQHandler(void)
 {
   /* USER CODE BEGIN DMA1_Stream7_IRQn 0 */
@@ -270,12 +272,26 @@ void DMA1_Stream7_IRQHandler(void)
 }
 
 /**
- * @brief This function handles USB On The Go FS global interrupt.
- */
+  * @brief This function handles TIM5 global interrupt.
+  */
+void TIM5_IRQHandler(void)
+{
+  /* USER CODE BEGIN TIM5_IRQn 0 */
+  TickTim5++;
+  /* USER CODE END TIM5_IRQn 0 */
+  HAL_TIM_IRQHandler(&htim5);
+  /* USER CODE BEGIN TIM5_IRQn 1 */
+
+  /* USER CODE END TIM5_IRQn 1 */
+}
+
+/**
+  * @brief This function handles USB On The Go FS global interrupt.
+  */
 void OTG_FS_IRQHandler(void)
 {
   /* USER CODE BEGIN OTG_FS_IRQn 0 */
-
+  
   /* USER CODE END OTG_FS_IRQn 0 */
   HAL_PCD_IRQHandler(&hpcd_USB_OTG_FS);
   /* USER CODE BEGIN OTG_FS_IRQn 1 */

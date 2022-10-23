@@ -25,7 +25,6 @@ uint8_t _keyCodeinit()
     // {
     //     return 0;
     // }
-    debug((int8_t *)0x0101, 2);
     return 0x01;
 }
 

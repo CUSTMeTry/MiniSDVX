@@ -58,7 +58,6 @@
   * @}
   */
 
-
 /** @defgroup USBD_DESC_Private_Defines USBD_DESC_Private_Defines
   * @brief Private defines.
   * @{
@@ -66,15 +65,15 @@
 
 #define USBD_VID                      1155
 #define USBD_LANGID_STRING            1033
-#define USBD_MANUFACTURER_STRING      "CUST114"
+#define USBD_MANUFACTURER_STRING      "STMicroelectronics"
 #if (USBD_USE_DFU == 1)
 #define USBD_PID                      57105 // for DFU PID must be 57105, ST proprietary modification
 #else
 #define USBD_PID                      21156
 #endif
-#define USBD_PRODUCT_STRING           "MiniSDVX DevEdition"
+#define USBD_PRODUCT_STRING           "STM32 COMPOSITE DEVICE"
 #define USBD_CONFIGURATION_STRING     "CONFIGURATION 0"
-#define USBD_INTERFACE_STRING         "MiniSDVX INTERFACE"
+#define USBD_INTERFACE_STRING         "COMPOSITE INTERFACE"
 
 /* USER CODE BEGIN PRIVATE_DEFINES */
 

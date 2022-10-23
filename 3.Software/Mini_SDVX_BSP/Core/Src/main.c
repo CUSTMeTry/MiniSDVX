@@ -41,6 +41,7 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
+extern USBD_HandleTypeDef hUsbDevice;
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -106,14 +107,11 @@ int main(void)
   MX_USB_OTG_FS_PCD_Init();
   MX_I2C1_Init();
   MX_TIM3_Init();
+  MX_TIM5_Init();
   /* USER CODE BEGIN 2 */
   MX_USB_DEVICE_Init();
-  uint8_t keyboardReport[8] = {0x00, 0x00, 0x05, 0x00, 0x00, 0x00, 0x00, 0x00};
-  uint8_t mouseReport[4] = {0x00, 0x05, 0x00, 0x00};
-  uint8_t keyboardReportNull[8] = {0};
-  uint8_t data[8] = {0};
+  HAL_TIM_Base_Start_IT(&htim3);
 
-  uint8_t data2[8] = {0x54, 0x78, 0x05, 0x00, 0x00, 0x00, 0x20, 0x03};
   // AT24CXX_Init();
 
   // while (AT24CXX_Check())
@@ -122,9 +120,6 @@ int main(void)
   //   USBD_CDC_TransmitPacket(0, &hUsbDevice);
   //   HAL_Delay(1000);
   // }
-
-  HAL_I2C_Mem_Write(&hi2c1, 0xA1, 0, I2C_MEMADD_SIZE_8BIT, data2, 8, 1000);
-
   // AT24C02_write(0x00, data2, 8);
   // AT24C02_read(0x00, data, 8);
   /* USER CODE END 2 */
@@ -138,8 +133,7 @@ int main(void)
     // Software_I2C_WriteByte("0xA0");
     //  print("satrt");
     //   print("SEND DATA\n");
-    HAL_Delay(1000);
-
+    
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */

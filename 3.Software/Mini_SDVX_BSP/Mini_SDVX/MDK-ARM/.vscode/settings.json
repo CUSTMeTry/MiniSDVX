@@ -15,6 +15,8 @@
         "i2c.h": "c",
         "usbd_def.h": "c",
         "usbd_desc.h": "c",
-        "usb_otg.h": "c"
+        "usb_otg.h": "c",
+        "usbd_cdc_acm.h": "c",
+        "stm32f4xx_hal_def.h": "c"
     }
 }
