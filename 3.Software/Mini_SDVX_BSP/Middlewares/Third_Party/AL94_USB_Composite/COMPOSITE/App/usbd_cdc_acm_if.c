@@ -453,7 +453,7 @@ static int8_t CDC_Receive(uint8_t cdc_ch, uint8_t *Buf, uint32_t *Len)
     {
       if (HAL_I2C_Mem_Write(&hi2c1, 0xA1, Buf[1], I2C_MEMADD_SIZE_8BIT, &Buf[2], len, 1000) == HAL_OK)
       {
-        sendData[0] = 0xfE;
+        sendData[0] = 0xfc;
       }
       else
       {

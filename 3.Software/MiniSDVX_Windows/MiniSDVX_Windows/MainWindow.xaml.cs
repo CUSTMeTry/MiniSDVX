@@ -15,6 +15,7 @@ using HandyControl.Data;
 
 using System.Windows.Threading;
 using Microsoft.Win32;
+using System.Diagnostics;
 
 namespace MiniSDVX_Windows
 {
@@ -27,14 +28,18 @@ namespace MiniSDVX_Windows
         string keyboardData = "";
         private Button? currentButton;
         private Button? connectButton;
+
+        private Button? writeButton;
+        private Button? readButton;
         int ret;
+        private static bool dataOK;
         private DispatcherTimer mDataTimer = new();
 
-        private DataPack dataPack = new()
+        public DataPack dataPack = new()
         {
             KeyItems = new List<KeyItem>(),
-            LEncoder = 0,
-            REncoder = 0
+            LEncoder = 5,
+            REncoder = 5
         };
         public GeneralUtils gu = new();
 
@@ -45,6 +50,8 @@ namespace MiniSDVX_Windows
             mDataTimer.Interval = TimeSpan.FromMilliseconds(1000);
             mDataTimer.Start();
             connectButton = (Button?)FindName("ConnectButton");
+            writeButton = (Button?)FindName("WriteButton");
+            readButton = (Button?)FindName("ReadButton");
         }
 
         private void CircleProgressBar_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
@@ -63,8 +70,12 @@ namespace MiniSDVX_Windows
         }
         private void Grid_KeyUp(object sender, KeyEventArgs e)
         {
+            //Debug.WriteLine("-------------Keyup-----------------");
+
             if (currentButton != null)
             {
+                Debug.WriteLine(currentButton.Content);
+
                 int b = (int)e.Key;
                 keyboardData = e.Key.ToString();
                   
@@ -140,6 +151,68 @@ namespace MiniSDVX_Windows
 
         private void WriteSDVX(object sender, RoutedEventArgs e)
         {
+            if (!gu.sp.IsOpen)
+            {
+                SendSuccessMessage("还未连接到MiniSDVX的说");
+            }
+
+            if(gu.SendSDVXMessage(dataPack) == 0)
+            {
+                SendSuccessMessage("写入成功");
+            }
+            else
+            {
+                SendWarningMessage("写入失败");
+            }
+
+        }
+
+        public void DataRefreshAfter()
+        {
+            if (dataPack == null || dataPack.KeyItems == null)
+            {
+                return;
+            }
+            for (int i = 0; i < 9; i ++)
+            {
+
+                if (dataPack.KeyItems[i] != null && dataPack.KeyItems[i].Name != null)
+                {
+                    Button thisButton = (Button)FindName(dataPack.KeyItems[i].Name);
+                    //Debug.WriteLine(dataPack.KeyItems[i].KeyCode);
+
+                    if (dataPack.KeyItems[i].KeyCode != 0)
+                    {
+
+                        if (dataPack.KeyItems[i].KeyString != null)
+                        {
+                            int fontsize = 50;
+                            while (fontsize * dataPack.KeyItems[i].KeyString.Length > 110 && fontsize > 10)
+                            {
+                                fontsize -= 2;
+                            }
+                            thisButton.FontSize = fontsize;
+                            thisButton.Content = dataPack.KeyItems[i].KeyString;
+                        }
+                    }
+                    else
+                    {
+                        thisButton.Content = dataPack.KeyItems[i].Name;
+
+                    }
+                   
+                }
+            }
+            LEncSlider.Value = dataPack.LEncoder;
+            REncSlider.Value = dataPack.REncoder;
+            SendSuccessMessage("数据读取成功");
+            return;
+
+        }
+
+        private void ReadSDVX(object sender, RoutedEventArgs e)
+        {
+           gu.ReadSDVXMessage();
 
         }
 
@@ -213,8 +286,20 @@ namespace MiniSDVX_Windows
             {
                 if (connectButton != null)
                 {
+
+                   
                     connectButton.Dispatcher.Invoke(new Action(delegate
                     {
+                        if (writeButton != null)
+                        {
+                            writeButton.IsEnabled = gu.sp.IsOpen;
+
+                        }
+                        if (readButton != null)
+                        {
+                            readButton.IsEnabled = gu.sp.IsOpen;
+
+                        }
                         if (gu.sp.IsOpen)
                         {
                             ConnectButton.Style = (Style)FindResource("ButtonDashedSuccess");
@@ -223,7 +308,7 @@ namespace MiniSDVX_Windows
                         else
                         {
                             connectButton.Content = "未连接到MiniSDVX设备";
-                            ret = gu.connectMiniSDVXPort();
+                            ret = gu.ConnectMiniSDVXPort();
                             if (ret == 2)
                             {
                                 ConnectButton.Style = (Style)FindResource("ButtonDashedDanger");

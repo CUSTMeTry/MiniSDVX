@@ -9,12 +9,6 @@ namespace MiniSDVX_Windows.Helper
 
 public class SerialClass
 {
-    /// <summary>
-    /// 获取串口们
-    /// </summary>
-    /// <returns> 天书串口类型</returns>
-    /// 
-
     public static string GetPorts()
     {
 

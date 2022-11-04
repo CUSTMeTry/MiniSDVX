@@ -14,7 +14,7 @@
         <ScrollViewer VerticalScrollBarVisibility="Hidden" HorizontalAlignment="Right">
                 <StackPanel VerticalAlignment="Top" Margin="0,10,10,10"/>
             </ScrollViewer>
-            <hc:TransitioningContentControl MouseDoubleClick="OpenDraw" MouseRightButtonUp="ClearCurrentButton">
+        <hc:TransitioningContentControl KeyUp="Grid_KeyUp" MouseDoubleClick="OpenDraw" MouseRightButtonUp="ClearCurrentButton">
                 <hc:SimplePanel>
             <hc:Watermark Mark="MiniSDVX" FontSize="100" FontWeight="Bold" MarkMargin="30,50"/>
             <StackPanel>
@@ -72,8 +72,8 @@
                             </hc:SimplePanel>
 
                             <Button Name="ConnectButton"  Style="{StaticResource ButtonDashedWarning}" Width="150" Click="ConnectSDVX" Content="连接MiniSDVX" Margin="20, 20, 0, 0" HorizontalAlignment ="Left"/>
-                            <Button Width="150" Content="写入MiniSDVX" Margin="20, 20, 0, 0" Style="{StaticResource ButtonDashedPrimary}" Click="WriteSDVX" hc:IconElement.Geometry="{StaticResource ClockGeometry}" HorizontalAlignment ="Left"/>
-                            <Button Width="150" Content="读出MiniSDVX" Margin="20, 10, 0, 0" Style="{StaticResource ButtonDashedPrimary}"  hc:IconElement.Geometry="{StaticResource SearchGeometry}" HorizontalAlignment ="Left"/>
+                            <Button Name="WriteButton" Width="150" Content="写入MiniSDVX" Margin="20, 20, 0, 0" Style="{StaticResource ButtonDashedPrimary}" Click="WriteSDVX" hc:IconElement.Geometry="{StaticResource ClockGeometry}" HorizontalAlignment ="Left"/>
+                            <Button Name="ReadButton" Width="150" Content="读出MiniSDVX" Margin="20, 10, 0, 0" Style="{StaticResource ButtonDashedPrimary}" Click="ReadSDVX"  hc:IconElement.Geometry="{StaticResource SearchGeometry}" HorizontalAlignment ="Left"/>
                             <Button Width="150" Content="保存配置" Click="SetJson" Margin="20, 10, 0, 0" Style="{StaticResource ButtonDashedPrimary}"  hc:IconElement.Geometry="{StaticResource SaveGeometry}" HorizontalAlignment ="Left"/>
                             <Button Width="150" Content="读取配置" Click="GetJson" Margin="20, 10, 0, 0" Style="{StaticResource ButtonDashedPrimary}"  hc:IconElement.Geometry="{StaticResource StarGeometry}" HorizontalAlignment ="Left"/>
                         </StackPanel>

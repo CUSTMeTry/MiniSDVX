@@ -533,3 +533,4 @@ E:\BaiduSyncdisk\Project\Development\Hardware\MiniSDVX\3.Software\MiniSDVX_Windo
 E:\BaiduSyncdisk\Project\Development\Hardware\MiniSDVX\3.Software\MiniSDVX_Windows\MiniSDVX_Windows\bin\Debug\net6.0-windows\win-x64\Newtonsoft.Json.dll
 E:\BaiduSyncdisk\Project\Development\Hardware\MiniSDVX\3.Software\MiniSDVX_Windows\MiniSDVX_Windows\bin\Debug\net6.0-windows\win-x64\System.IO.Ports.dll
 E:\BaiduSyncdisk\Project\Development\Hardware\MiniSDVX\3.Software\MiniSDVX_Windows\MiniSDVX_Windows\bin\Debug\net6.0-windows\win-x64\System.Management.dll
+E:\BaiduSyncdisk\Project\Development\Hardware\MiniSDVX\3.Software\MiniSDVX_Windows\MiniSDVX_Windows\obj\Debug\net6.0-windows\win-x64\MiniSDVX_Windows_Content.g.cs

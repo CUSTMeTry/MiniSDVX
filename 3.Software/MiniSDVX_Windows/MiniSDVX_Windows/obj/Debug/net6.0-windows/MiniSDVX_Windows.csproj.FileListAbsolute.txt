@@ -42,3 +42,4 @@ E:\BaiduSyncdisk\Project\Development\Hardware\MiniSDVX\3.Software\MiniSDVX_Windo
 E:\BaiduSyncdisk\Project\Development\Hardware\MiniSDVX\3.Software\MiniSDVX_Windows\MiniSDVX_Windows\obj\Debug\net6.0-windows\MiniSDVX_Windows.genruntimeconfig.cache
 E:\BaiduSyncdisk\Project\Development\Hardware\MiniSDVX\3.Software\MiniSDVX_Windows\MiniSDVX_Windows\obj\Debug\net6.0-windows\ref\MiniSDVX_Windows.dll
 E:\BaiduSyncdisk\Project\Development\Hardware\MiniSDVX\3.Software\MiniSDVX_Windows\MiniSDVX_Windows\bin\Debug\net6.0-windows\Newtonsoft.Json.dll
+E:\BaiduSyncdisk\Project\Development\Hardware\MiniSDVX\3.Software\MiniSDVX_Windows\MiniSDVX_Windows\obj\Debug\net6.0-windows\MiniSDVX_Windows_Content.g.cs
