@@ -38,6 +38,7 @@
 "mini_sdvx\bsp_encoder.o"
 "mini_sdvx\bsp_24c02.o"
 "mini_sdvx\bsp_key.o"
+"mini_sdvx\bsp_rgb.o"
 "mini_sdvx\usbd_composite.o"
 "mini_sdvx\usbd_hid_keyboard.o"
 "mini_sdvx\usbd_core.o"

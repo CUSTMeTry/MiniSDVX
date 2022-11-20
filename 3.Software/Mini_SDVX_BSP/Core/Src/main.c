@@ -32,6 +32,7 @@
 #include "usbd_hid_keyboard.h"
 #include "usbd_hid_mouse.h"
 #include "usbd_cdc_acm.h"
+#include "bsp_rgb.h"
 //#include "bsp_24c02.h"
 /* USER CODE END Includes */
 
@@ -110,30 +111,22 @@ int main(void)
   MX_TIM5_Init();
   /* USER CODE BEGIN 2 */
   MX_USB_DEVICE_Init();
-  HAL_TIM_Base_Start_IT(&htim3);
+  // HAL_TIM_Base_Start_IT(&htim3);
 
   // AT24CXX_Init();
-
-  // while (AT24CXX_Check())
-  // {
-  //   USBD_CDC_SetTxBuffer(0, &hUsbDevice, (uint8_t *)"AT24CXX Not Found", 16);
-  //   USBD_CDC_TransmitPacket(0, &hUsbDevice);
-  //   HAL_Delay(1000);
-  // }
-  // AT24C02_write(0x00, data2, 8);
-  // AT24C02_read(0x00, data, 8);
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-    // HAL_I2C_Mem_Read(&hi2c1, 0xA0, 0, I2C_MEMADD_SIZE_8BIT, data, 8, 1000);
-
-    // Software_I2C_WriteByte("0xA0");
-    //  print("satrt");
-    //   print("SEND DATA\n");
-    
+    //WS_CloseAll();
+    // HAL_Delay(500);
+    // WS_WriteAll_RGB(100, 0, 100);
+    // HAL_Delay(500);
+    // USBD_CDC_SetTxBuffer(0, &hUsbDevice, (uint8_t *)"RGB SEND", 9);
+    // USBD_CDC_TransmitPacket(0, &hUsbDevice);
+    rainbowCycle(200);
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
