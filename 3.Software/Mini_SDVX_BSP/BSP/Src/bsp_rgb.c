@@ -2,7 +2,7 @@
 
 uint16_t send_Buf[NUM];
 uint16_t send_BufK[NUM];
-
+extern uint8_t keyIsPress[9];
 
 // 启动DMA载入数据
 void WS_Load(void)
@@ -13,9 +13,8 @@ void WS_Load(void)
 // 启动DMA载入数据
 void WS_LoadK(void)
 {
-	HAL_TIM_PWM_Start_DMA(&htim1, TIM_CHANNEL_3, (uint32_t *)send_Buf, NUM_K);
+	HAL_TIM_PWM_Start_DMA(&htim1, TIM_CHANNEL_3, (uint32_t *)send_BufK, NUM_K);
 }
-
 
 // 关闭所有LED灯
 void WS_CloseAll(void)
@@ -47,7 +46,7 @@ void WS_CloseAllK(void)
 /**
  * @brief 全部led灯设置成一样的亮度，其中RGB分别设置亮度
  * WS2812的写入顺序是GRB，高位在前面
-*/
+ */
 void WS_WriteAll_RGB(uint8_t n_R, uint8_t n_G, uint8_t n_B)
 {
 	uint16_t i, j;
@@ -92,12 +91,12 @@ uint32_t WS281x_Color(uint8_t red, uint8_t green, uint8_t blue)
 }
 
 /**
-  * @brief  Set the color of No.n light in 24bit-format .
-  * @note   None
-  * @param  n: No.n lamp light, ranges from 0 to (PIXEL_NUM-1)
-  * @param  GRBColor: color value of No.n light in 24bit-format(8 bit G + 8 bit R +8 bit B)
-  * @retval None
-  */
+ * @brief  Set the color of No.n light in 24bit-format .
+ * @note   None
+ * @param  n: No.n lamp light, ranges from 0 to (PIXEL_NUM-1)
+ * @param  GRBColor: color value of No.n light in 24bit-format(8 bit G + 8 bit R +8 bit B)
+ * @retval None
+ */
 void WS281x_SetPixelColor(uint16_t n, uint32_t GRBColor)
 {
 	uint8_t i;
@@ -123,14 +122,14 @@ void WS281x_SetPixelColorK(uint16_t n, uint32_t GRBColor)
 }
 
 /**
-  * @brief  Set the color of No.n light in RGB-format .
-  * @note   None
-  * @param  n: No.n lamp light, ranges from 0 to (PIXEL_NUM-1)
-  * @param  red: red color value of No.n light in RGB-format
-  * @param  green: greeen color value of No.n light in RGB-format
-  * @param  blue: blue color value of No.n light in RGB-format
-  * @retval None
-  */
+ * @brief  Set the color of No.n light in RGB-format .
+ * @note   None
+ * @param  n: No.n lamp light, ranges from 0 to (PIXEL_NUM-1)
+ * @param  red: red color value of No.n light in RGB-format
+ * @param  green: greeen color value of No.n light in RGB-format
+ * @param  blue: blue color value of No.n light in RGB-format
+ * @retval None
+ */
 void WS281x_SetPixelRGB(uint16_t n, uint8_t red, uint8_t green, uint8_t blue)
 {
 	uint8_t i;
@@ -226,7 +225,8 @@ void rainbowCycle(uint8_t wait)
 	WS_Load();
 }
 
-void soloShow(uint8_t wait){
+void soloShow(uint8_t wait)
+{
 	uint32_t timestamp = HAL_GetTick();
 	uint16_t i;
 	static uint8_t j;
@@ -240,7 +240,8 @@ void soloShow(uint8_t wait){
 	if ((timestamp > next_time)) // && (timestamp - next_time < wait*5))
 	{
 		j++;
-		if(j >= PIXEL_NUM){
+		if (j >= PIXEL_NUM)
+		{
 			j = 0;
 		}
 		next_time = timestamp + wait;
@@ -248,15 +249,48 @@ void soloShow(uint8_t wait){
 		{
 			WS281x_SetPixelColor(i, 0);
 		}
-		WS281x_SetPixelColor(j, WS281x_Color(j * 3, 200 - j *3, 0));
+		WS281x_SetPixelColor(j, WS281x_Color(j * 3, 0,  200 - j * 3));
 	}
 	WS_Load();
 }
 
+void blinkWithKey(uint8_t wait)
+{
+
+	uint32_t timestamp = HAL_GetTick();
+	uint16_t i;
+	static uint8_t j;
+	static uint32_t next_time = 0;
+	static uint8_t blinkWithKeyTimeTick[9] = {0};
+
+	static uint8_t loop = 0;
+	if (loop == 0)
+		next_time = timestamp;
+	loop = 1; //首次调用初始化
+
+	if ((timestamp > next_time)) // && (timestamp - next_time < wait*5))
+	{
+		next_time = timestamp + wait;
+		for (uint8_t i = 0; i < 9; i++)
+		{
+			if (keyIsPress[i])
+			{
+				blinkWithKeyTimeTick[i] = 0xcc;
+			}
+			else if(blinkWithKeyTimeTick[i] > 7)
+			{
+				blinkWithKeyTimeTick[i]-=8;
+			}else{
+				blinkWithKeyTimeTick[i] = 0; 
+			}
+			WS281x_SetPixelRGBK(i, 0, 0, blinkWithKeyTimeTick[i]);
+		}
+	}
+	WS_LoadK();
+}
 void HAL_TIM_PWM_PulseFinishedCallback(TIM_HandleTypeDef *htim)
 {
-    //    HAL_TIM_PWM_Stop_DMA(&htim4,TIM_CHANNEL_4);
-    //    HAL_TIM_PWM_Stop_DMA(&htim1,TIM_CHANNEL_1);
-    HAL_TIM_PWM_Stop_DMA(htim, TIM_CHANNEL_3); // PA8
+	//    HAL_TIM_PWM_Stop_DMA(&htim4,TIM_CHANNEL_4);
+	//    HAL_TIM_PWM_Stop_DMA(&htim1,TIM_CHANNEL_1);
+	HAL_TIM_PWM_Stop_DMA(htim, TIM_CHANNEL_3); // PA8
 }
-

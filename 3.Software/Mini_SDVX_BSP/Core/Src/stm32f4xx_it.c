@@ -49,8 +49,9 @@
 extern USBD_HandleTypeDef hUsbDevice;
 extern int8_t LCount;
 extern int8_t RCount;
+extern uint8_t keyboardReport[11];
+
 uint8_t mouseReport[4] = {0};
-uint8_t keyboardRReport[11] = {0};
 uint8_t keyboardRefrsh[11] = {0};
 uint32_t TickTim5 = 0; 
 /* USER CODE END PV */
@@ -214,15 +215,29 @@ void SysTick_Handler(void)
 /******************************************************************************/
 
 /**
+  * @brief This function handles EXTI line0 interrupt.
+  */
+void EXTI0_IRQHandler(void)
+{
+  /* USER CODE BEGIN EXTI0_IRQn 0 */
+
+  /* USER CODE END EXTI0_IRQn 0 */
+  HAL_GPIO_EXTI_IRQHandler(GPIO_PIN_0);
+  /* USER CODE BEGIN EXTI0_IRQn 1 */
+
+  /* USER CODE END EXTI0_IRQn 1 */
+}
+
+/**
   * @brief This function handles TIM3 global interrupt.
   */
 void TIM3_IRQHandler(void)
 {
   /* USER CODE BEGIN TIM3_IRQn 0 */
   keyboardGetData();
-  if (keyboardBitDecode(keyboardRReport))
+  if (keyboardBitDecode())
   {
-    USBD_HID_Keybaord_SendReport(&hUsbDevice, keyboardRReport, 11);
+    USBD_HID_Keybaord_SendReport(&hUsbDevice, keyboardReport, 11);
     USBD_HID_Keybaord_SendReport(&hUsbDevice, keyboardRefrsh, 11);
   }
   if (RCount != 0 || LCount != 0)

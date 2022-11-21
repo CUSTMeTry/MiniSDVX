@@ -12,7 +12,7 @@ uint8_t _keyCodeinit();
 
 void keyboardInit(void);
 void keyboardGetData(void);
-uint8_t keyboardBitDecode(uint8_t * keyboardReport);
+uint8_t keyboardBitDecode(void);
 
 
 #ifdef __cplusplus

@@ -18,7 +18,8 @@ extern "C"
 #define NUM_K (WAIT_TIME + 24*PIXEL_NUM_K + 350)        // Reset 280us / 1.25us = 224
 #define WS1 70
 #define WS0  35
-
+#define RANDOM_MAX	255
+#define RANDOM_MIN  0
 extern uint16_t send_Buf[NUM];
 
 void WS_Load(void);
@@ -41,6 +42,8 @@ uint32_t Wheel(uint8_t WheelPos);
 void rainbow(uint8_t wait);
 void rainbowCycle(uint8_t wait);
 void soloShow(uint8_t wait);
+void blinkWithKey(uint8_t wait);
+
 
 #ifdef __cplusplus
 }

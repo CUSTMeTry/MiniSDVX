@@ -62,8 +62,6 @@ void debug(uint8_t *c, uint32_t len);
 #define Si_CE_GPIO_Port GPIOA
 #define Si_CSN_Pin GPIO_PIN_4
 #define Si_CSN_GPIO_Port GPIOA
-#define Si_IRQ_Pin GPIO_PIN_0
-#define Si_IRQ_GPIO_Port GPIOB
 #define ENC_RA_Pin GPIO_PIN_12
 #define ENC_RA_GPIO_Port GPIOB
 #define ENC_RA_EXTI_IRQn EXTI15_10_IRQn

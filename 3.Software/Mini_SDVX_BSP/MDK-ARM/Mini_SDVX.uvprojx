@@ -761,9 +761,6 @@
           </Files>
         </Group>
         <Group>
-          <GroupName>::CMSIS</GroupName>
-        </Group>
-        <Group>
           <GroupName>Middlewares/Composite/USB/COMPOSITE/COMPOSITE</GroupName>
           <GroupOption>
             <CommonProperty>
@@ -1748,6 +1745,9 @@
               </FileOption>
             </File>
           </Files>
+        </Group>
+        <Group>
+          <GroupName>::CMSIS</GroupName>
         </Group>
       </Groups>
     </Target>
