@@ -111,7 +111,7 @@ int main(void)
   MX_TIM5_Init();
   /* USER CODE BEGIN 2 */
   MX_USB_DEVICE_Init();
-  // HAL_TIM_Base_Start_IT(&htim3);
+  HAL_TIM_Base_Start_IT(&htim3);
 
   // AT24CXX_Init();
   /* USER CODE END 2 */
@@ -126,7 +126,7 @@ int main(void)
     // HAL_Delay(500);
     // USBD_CDC_SetTxBuffer(0, &hUsbDevice, (uint8_t *)"RGB SEND", 9);
     // USBD_CDC_TransmitPacket(0, &hUsbDevice);
-    rainbowCycle(200);
+    rainbowCycle(8);
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */

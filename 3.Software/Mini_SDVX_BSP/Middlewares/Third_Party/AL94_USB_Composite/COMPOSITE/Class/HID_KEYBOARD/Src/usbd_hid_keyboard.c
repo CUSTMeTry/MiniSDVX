@@ -1,41 +1,41 @@
 /**
- ******************************************************************************
- * @file    usbd_hid.c
- * @author  MCD Application Team
- * @brief   This file provides the HID core functions.
- *
- * @verbatim
- *
- *          ===================================================================
- *                                HID Class  Description
- *          ===================================================================
- *           This module manages the HID class V1.11 following the "Device Class Definition
- *           for Human Interface Devices (HID) Version 1.11 Jun 27, 2001".
- *           This driver implements the following aspects of the specification:
- *             - The Boot Interface Subclass
- *             - The Keyboard protocol
- *             - Usage Page : Generic Desktop
- *             - Collection : Application
- *
- * @note     In HS mode and when the DMA is used, all variables and data structures
- *           dealing with the DMA during the transaction process should be 32-bit aligned.
- *
- *
- *  @endverbatim
- *
- ******************************************************************************
- * @attention
- *
- * <h2><center>&copy; Copyright (c) 2015 STMicroelectronics.
- * All rights reserved.</center></h2>
- *
- * This software component is licensed by ST under Ultimate Liberty license
- * SLA0044, the "License"; You may not use this file except in compliance with
- * the License. You may obtain a copy of the License at:
- *                      www.st.com/SLA0044
- *
- ******************************************************************************
- */
+  ******************************************************************************
+  * @file    usbd_hid.c
+  * @author  MCD Application Team
+  * @brief   This file provides the HID core functions.
+  *
+  * @verbatim
+  *
+  *          ===================================================================
+  *                                HID Class  Description
+  *          ===================================================================
+  *           This module manages the HID class V1.11 following the "Device Class Definition
+  *           for Human Interface Devices (HID) Version 1.11 Jun 27, 2001".
+  *           This driver implements the following aspects of the specification:
+  *             - The Boot Interface Subclass
+  *             - The Keyboard protocol
+  *             - Usage Page : Generic Desktop
+  *             - Collection : Application
+  *
+  * @note     In HS mode and when the DMA is used, all variables and data structures
+  *           dealing with the DMA during the transaction process should be 32-bit aligned.
+  *
+  *
+  *  @endverbatim
+  *
+  ******************************************************************************
+  * @attention
+  *
+  * <h2><center>&copy; Copyright (c) 2015 STMicroelectronics.
+  * All rights reserved.</center></h2>
+  *
+  * This software component is licensed by ST under Ultimate Liberty license
+  * SLA0044, the "License"; You may not use this file except in compliance with
+  * the License. You may obtain a copy of the License at:
+  *                      www.st.com/SLA0044
+  *
+  ******************************************************************************
+  */
 
 /* BSPDependencies
 - "stm32xxxxx_{eval}{discovery}{nucleo_144}.c"
@@ -55,39 +55,39 @@ uint8_t HID_KEYBOARD_ITF_NBR = _HID_KEYBOARD_ITF_NBR;
 uint8_t HID_KEYBOARD_STR_DESC_IDX = _HID_KEYBOARD_STR_DESC_IDX;
 
 /** @addtogroup STM32_USB_DEVICE_LIBRARY
- * @{
- */
+  * @{
+  */
 
 /** @defgroup USBD_HID
- * @brief usbd core module
- * @{
- */
+  * @brief usbd core module
+  * @{
+  */
 
 /** @defgroup USBD_HID_Private_TypesDefinitions
- * @{
- */
+  * @{
+  */
 /**
- * @}
- */
+  * @}
+  */
 
 /** @defgroup USBD_HID_Private_Defines
- * @{
- */
+  * @{
+  */
 
 /**
- * @}
- */
+  * @}
+  */
 
 /** @defgroup USBD_HID_Private_Macros
- * @{
- */
+  * @{
+  */
 /**
- * @}
- */
+  * @}
+  */
 
 /** @defgroup USBD_HID_Private_FunctionPrototypes
- * @{
- */
+  * @{
+  */
 
 static uint8_t USBD_HID_Init(USBD_HandleTypeDef *pdev, uint8_t cfgidx);
 static uint8_t USBD_HID_DeInit(USBD_HandleTypeDef *pdev, uint8_t cfgidx);
@@ -100,12 +100,12 @@ static uint8_t *USBD_HID_GetOtherSpeedCfgDesc(uint16_t *length);
 static uint8_t *USBD_HID_GetDeviceQualifierDesc(uint16_t *length);
 
 /**
- * @}
- */
+  * @}
+  */
 
 /** @defgroup USBD_HID_Private_Variables
- * @{
- */
+  * @{
+  */
 
 static USBD_HID_Keyboard_HandleTypeDef USBD_HID_KBD_Instace;
 
@@ -262,56 +262,116 @@ __ALIGN_BEGIN static uint8_t USBD_HID_DeviceQualifierDesc[USB_LEN_DEV_QUALIFIER_
 /*  HID keyboard report descriptor */
 __ALIGN_BEGIN static uint8_t HID_KEYBOARD_ReportDesc[HID_KEYBOARD_REPORT_DESC_SIZE] __ALIGN_END =
     {
-        //-------------键盘部分报告描述符----------------
-        //表示用途页为通用桌面设备
-        0x05, 0x01, // USAGE_PAGE (Generic Desktop)
-        0x09, 0x06, // USAGE (Keyboard)
-        0xa1, 0x01, // COLLECTION (Application)
-        0x05, 0x07, //   USAGE_PAGE (Keyboard)
-        0x19, 0xe0, //   USAGE_MINIMUM (Keyboard LeftControl)
-        0x29, 0xe7, //   USAGE_MAXIMUM (Keyboard Right GUI)
-        0x15, 0x00, //   LOGICAL_MINIMUM (0)
-        0x25, 0x01, //   LOGICAL_MAXIMUM (1)
-        0x75, 0x01, //   REPORT_SIZE (1)
-        0x95, 0x08, //   REPORT_COUNT (8)
-        0x81, 0x02, //   INPUT (Data,Var,Abs)
-        0x95, 0x01, //   REPORT_COUNT (1)
-        0x75, 0x08, //   REPORT_SIZE (8)
-        0x81, 0x03, //   INPUT (Cnst,Var,Abs)
-        0x95, 0x05, //   REPORT_COUNT (5)
-        0x75, 0x01, //   REPORT_SIZE (1)
-        0x05, 0x08, //   USAGE_PAGE (LEDs)
-        0x19, 0x01, //   USAGE_MINIMUM (Num Lock)
-        0x29, 0x05, //   USAGE_MAXIMUM (Kana)
-        0x91, 0x02, //   OUTPUT (Data,Var,Abs)
-        0x95, 0x01, //   REPORT_COUNT (1)
-        0x75, 0x03, //   REPORT_SIZE (3)
-        0x91, 0x03, //   OUTPUT (Cnst,Var,Abs)
-        0x95, 0x09, //   REPORT_COUNT (6)
-        0x75, 0x08, //   REPORT_SIZE (8)
-        0x15, 0x00, //   LOGICAL_MINIMUM (0)
-        0x25, 0xFF, //   LOGICAL_MAXIMUM (255)
-        0x05, 0x07, //   USAGE_PAGE (Keyboard)
-        0x19, 0x00, //   USAGE_MINIMUM (Reserved (no event indicated))
-        0x29, 0x65, //   USAGE_MAXIMUM (Keyboard Application)
-        0x81, 0x00, //   INPUT (Data,Ary,Abs)
-        0xc0};
+        0x05, 0x01,
+        0x09, 0x06,
+        0xA1, 0x01,
+        0x85, 0x01,
+        0x05, 0x07,
+        0x19, 0xE0,
+        0x29, 0xE7,
+        0x15, 0x00,
+        0x25, 0x01,
+        0x75, 0x01,
+        0x95, 0x08,
+        0x81, 0x02,
+        0x75, 0x08,
+        0x95, 0x01,
+        0x81, 0x01,
+        0x05, 0x07,
+        0x19, 0x00,
+        0x29, 0x65,
+        0x15, 0x00,
+        0x25, 0x65,
+        0x75, 0x08,
+        0x95, 0x05,
+        0x81, 0x00,
+        0xC0, 0x05,
+        0x0C, 0x09,
+        0x01, 0xA1,
+        0x01, 0x85,
+        0x02, 0x19,
+        0x00, 0x2A,
+        0x3C, 0x02,
+        0x15, 0x00,
+        0x26, 0x3C,
+        0x02, 0x95,
+        0x01, 0x75,
+        0x10, 0x81,
+        0x00, 0xC0,
+        0x05, 0x01,
+        0x09, 0x80,
+        0xA1, 0x01,
+        0x85, 0x03,
+        0x19, 0x81,
+        0x29, 0x83,
+        0x15, 0x00,
+        0x25, 0x01,
+        0x75, 0x01,
+        0x95, 0x03,
+        0x81, 0x02,
+        0x95, 0x05,
+        0x81, 0x01,
+        0xC0, 0x06,
+        0x01, 0xFF,
+        0x09, 0x01,
+        0xA1, 0x01,
+        0x85, 0x04,
+        0x95, 0x01,
+        0x75, 0x08,
+        0x15, 0x01,
+        0x25, 0x0A,
+        0x09, 0x20,
+        0xB1, 0x03,
+        0x09, 0x23,
+        0xB1, 0x03,
+        0x25, 0x4F,
+        0x09, 0x21,
+        0xB1, 0x03,
+        0x25, 0x30,
+        0x09, 0x22,
+        0xB1, 0x03,
+        0x95, 0x03,
+        0x09, 0x24,
+        0xB1, 0x03,
+        0xC0, 0x06,
+        0x01, 0xFF,
+        0x09, 0x01,
+        0xA1, 0x01,
+        0x85, 0x05,
+        0x95, 0x01,
+        0x75, 0x08,
+        0x15, 0x01,
+        0x25, 0x0A,
+        0x09, 0x20,
+        0xB1, 0x03,
+        0x09, 0x23,
+        0xB1, 0x03,
+        0x25, 0x4F,
+        0x09, 0x21,
+        0xB1, 0x03,
+        0x25, 0x30,
+        0x09, 0x22,
+        0xB1, 0x03,
+        0x95, 0x03,
+        0x09, 0x24,
+        0xB1, 0x03,
+        0xC0};
 
 /**
- * @}
- */
+  * @}
+  */
 
 /** @defgroup USBD_HID_Private_Functions
- * @{
- */
+  * @{
+  */
 
 /**
- * @brief  USBD_HID_Init
- *         Initialize the HID interface
- * @param  pdev: device instance
- * @param  cfgidx: Configuration index
- * @retval status
- */
+  * @brief  USBD_HID_Init
+  *         Initialize the HID interface
+  * @param  pdev: device instance
+  * @param  cfgidx: Configuration index
+  * @retval status
+  */
 static uint8_t USBD_HID_Init(USBD_HandleTypeDef *pdev, uint8_t cfgidx)
 {
   UNUSED(cfgidx);
@@ -347,12 +407,12 @@ static uint8_t USBD_HID_Init(USBD_HandleTypeDef *pdev, uint8_t cfgidx)
 }
 
 /**
- * @brief  USBD_HID_DeInit
- *         DeInitialize the HID layer
- * @param  pdev: device instance
- * @param  cfgidx: Configuration index
- * @retval status
- */
+  * @brief  USBD_HID_DeInit
+  *         DeInitialize the HID layer
+  * @param  pdev: device instance
+  * @param  cfgidx: Configuration index
+  * @retval status
+  */
 static uint8_t USBD_HID_DeInit(USBD_HandleTypeDef *pdev, uint8_t cfgidx)
 {
   UNUSED(cfgidx);
@@ -375,12 +435,12 @@ static uint8_t USBD_HID_DeInit(USBD_HandleTypeDef *pdev, uint8_t cfgidx)
 }
 
 /**
- * @brief  USBD_HID_Setup
- *         Handle the HID specific requests
- * @param  pdev: instance
- * @param  req: usb requests
- * @retval status
- */
+  * @brief  USBD_HID_Setup
+  *         Handle the HID specific requests
+  * @param  pdev: instance
+  * @param  req: usb requests
+  * @retval status
+  */
 static uint8_t USBD_HID_Setup(USBD_HandleTypeDef *pdev, USBD_SetupReqTypedef *req)
 {
   USBD_HID_Keyboard_HandleTypeDef *hhid = (USBD_HID_Keyboard_HandleTypeDef *)pdev->pClassData_HID_Keyboard;
@@ -500,12 +560,12 @@ static uint8_t USBD_HID_Setup(USBD_HandleTypeDef *pdev, USBD_SetupReqTypedef *re
 }
 
 /**
- * @brief  USBD_HID_GetCfgFSDesc
- *         return FS configuration descriptor
- * @param  speed : current device speed
- * @param  length : pointer data length
- * @retval pointer to descriptor buffer
- */
+  * @brief  USBD_HID_GetCfgFSDesc
+  *         return FS configuration descriptor
+  * @param  speed : current device speed
+  * @param  length : pointer data length
+  * @retval pointer to descriptor buffer
+  */
 static uint8_t *USBD_HID_GetFSCfgDesc(uint16_t *length)
 {
   *length = (uint16_t)sizeof(USBD_HID_KEYBOARD_CfgFSDesc);
@@ -514,12 +574,12 @@ static uint8_t *USBD_HID_GetFSCfgDesc(uint16_t *length)
 }
 
 /**
- * @brief  USBD_HID_GetCfgHSDesc
- *         return HS configuration descriptor
- * @param  speed : current device speed
- * @param  length : pointer data length
- * @retval pointer to descriptor buffer
- */
+  * @brief  USBD_HID_GetCfgHSDesc
+  *         return HS configuration descriptor
+  * @param  speed : current device speed
+  * @param  length : pointer data length
+  * @retval pointer to descriptor buffer
+  */
 static uint8_t *USBD_HID_GetHSCfgDesc(uint16_t *length)
 {
   *length = (uint16_t)sizeof(USBD_HID_KEYBOARD_CfgHSDesc);
@@ -528,12 +588,12 @@ static uint8_t *USBD_HID_GetHSCfgDesc(uint16_t *length)
 }
 
 /**
- * @brief  USBD_HID_GetOtherSpeedCfgDesc
- *         return other speed configuration descriptor
- * @param  speed : current device speed
- * @param  length : pointer data length
- * @retval pointer to descriptor buffer
- */
+  * @brief  USBD_HID_GetOtherSpeedCfgDesc
+  *         return other speed configuration descriptor
+  * @param  speed : current device speed
+  * @param  length : pointer data length
+  * @retval pointer to descriptor buffer
+  */
 static uint8_t *USBD_HID_GetOtherSpeedCfgDesc(uint16_t *length)
 {
   *length = (uint16_t)sizeof(USBD_HID_KEYBOARD_CfgFSDesc);
@@ -542,12 +602,12 @@ static uint8_t *USBD_HID_GetOtherSpeedCfgDesc(uint16_t *length)
 }
 
 /**
- * @brief  USBD_HID_DataIn
- *         handle data IN Stage
- * @param  pdev: device instance
- * @param  epnum: endpoint index
- * @retval status
- */
+  * @brief  USBD_HID_DataIn
+  *         handle data IN Stage
+  * @param  pdev: device instance
+  * @param  epnum: endpoint index
+  * @retval status
+  */
 static uint8_t USBD_HID_DataIn(USBD_HandleTypeDef *pdev, uint8_t epnum)
 {
   UNUSED(epnum);
@@ -559,11 +619,11 @@ static uint8_t USBD_HID_DataIn(USBD_HandleTypeDef *pdev, uint8_t epnum)
 }
 
 /**
- * @brief  DeviceQualifierDescriptor
- *         return Device Qualifier descriptor
- * @param  length : pointer data length
- * @retval pointer to descriptor buffer
- */
+  * @brief  DeviceQualifierDescriptor
+  *         return Device Qualifier descriptor
+  * @param  length : pointer data length
+  * @retval pointer to descriptor buffer
+  */
 static uint8_t *USBD_HID_GetDeviceQualifierDesc(uint16_t *length)
 {
   *length = (uint16_t)sizeof(USBD_HID_DeviceQualifierDesc);
@@ -572,12 +632,12 @@ static uint8_t *USBD_HID_GetDeviceQualifierDesc(uint16_t *length)
 }
 
 /**
- * @brief  USBD_HID_SendReport
- *         Send HID Report
- * @param  pdev: device instance
- * @param  buff: pointer to report
- * @retval status
- */
+  * @brief  USBD_HID_SendReport
+  *         Send HID Report
+  * @param  pdev: device instance
+  * @param  buff: pointer to report
+  * @retval status
+  */
 uint8_t USBD_HID_Keybaord_SendReport(USBD_HandleTypeDef *pdev, uint8_t *report, uint16_t len)
 {
   USBD_HID_Keyboard_HandleTypeDef *hhid = (USBD_HID_Keyboard_HandleTypeDef *)pdev->pClassData_HID_Keyboard;
@@ -600,11 +660,11 @@ uint8_t USBD_HID_Keybaord_SendReport(USBD_HandleTypeDef *pdev, uint8_t *report, 
 }
 
 /**
- * @brief  USBD_HID_GetPollingInterval
- *         return polling interval from endpoint descriptor
- * @param  pdev: device instance
- * @retval polling interval
- */
+  * @brief  USBD_HID_GetPollingInterval
+  *         return polling interval from endpoint descriptor
+  * @param  pdev: device instance
+  * @retval polling interval
+  */
 uint32_t USBD_HID_Keyboard_GetPollingInterval(USBD_HandleTypeDef *pdev)
 {
   uint32_t polling_interval;
@@ -639,15 +699,15 @@ void USBD_Update_HID_KBD_DESC(uint8_t *desc, uint8_t itf_no, uint8_t in_ep, uint
 }
 
 /**
- * @}
- */
+  * @}
+  */
 
 /**
- * @}
- */
+  * @}
+  */
 
 /**
- * @}
- */
+  * @}
+  */
 
 /************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/
