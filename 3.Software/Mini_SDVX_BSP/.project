@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectDescription>
+  <name>Mini_SDVX</name>
+  <comment />
+  <projects />
+  <buildSpec>
+    <buildCommand>
+      <name>org.eclipse.cdt.managedbuilder.core.genmakebuilder</name>
+      <triggers>clean,full,incremental,</triggers>
+      <arguments />
+    </buildCommand>
+    <buildCommand>
+      <name>org.eclipse.cdt.managedbuilder.core.ScannerConfigBuilder</name>
+      <triggers>full,incremental,</triggers>
+      <arguments />
+    </buildCommand>
+  </buildSpec>
+  <natures>
+    <nature>org.eclipse.cdt.core.cnature</nature>
+    <nature>org.eclipse.cdt.managedbuilder.core.managedBuildNature</nature>
+    <nature>org.eclipse.cdt.managedbuilder.core.ScannerConfigNature</nature>
+    <nature>fr.ac6.mcu.ide.core.MCUProjectNature</nature>
+  </natures>
+  <linkedResources>
+    <link>
+      <name>Composite/USB/COMPOSITE/COMPOSITE/usbd_composite.c</name>
+      <type>1</type>
+      <location>PARENT-2-PROJECT_LOC/Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Class/COMPOSITE/Src/usbd_composite.c</location>
+    </link>
+    <link>
+      <name>Composite/USB/COMPOSITE/HID_KEYBOARD/usbd_hid_keyboard.c</name>
+      <type>1</type>
+      <location>PARENT-2-PROJECT_LOC/Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Class/HID_KEYBOARD/Src/usbd_hid_keyboard.c</location>
+    </link>
+    <link>
+      <name>Composite/USB/COMPOSITE/Core/usbd_core.c</name>
+      <type>1</type>
+      <location>PARENT-2-PROJECT_LOC/Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Core/Src/usbd_core.c</location>
+    </link>
+    <link>
+      <name>Composite/USB/COMPOSITE/Core/usbd_ctlreq.c</name>
+      <type>1</type>
+      <location>PARENT-2-PROJECT_LOC/Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Core/Src/usbd_ctlreq.c</location>
+    </link>
+    <link>
+      <name>Composite/USB/COMPOSITE/Core/usbd_ioreq.c</name>
+      <type>1</type>
+      <location>PARENT-2-PROJECT_LOC/Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Core/Src/usbd_ioreq.c</location>
+    </link>
+    <link>
+      <name>Composite/USB/COMPOSITE/Core/usb_device.c</name>
+      <type>1</type>
+      <location>PARENT-2-PROJECT_LOC/Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usb_device.c</location>
+    </link>
+    <link>
+      <name>Composite/USB/COMPOSITE/Core/usbd_desc.c</name>
+      <type>1</type>
+      <location>PARENT-2-PROJECT_LOC/Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usbd_desc.c</location>
+    </link>
+    <link>
+      <name>Composite/USB/COMPOSITE/Core/usbd_conf.c</name>
+      <type>1</type>
+      <location>PARENT-2-PROJECT_LOC/Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Target/usbd_conf.c</location>
+    </link>
+    <link>
+      <name>Composite/USB/COMPOSITE/CDC_ACM/usbd_cdc_acm.c</name>
+      <type>1</type>
+      <location>PARENT-2-PROJECT_LOC/Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Class/CDC_ACM/Src/usbd_cdc_acm.c</location>
+    </link>
+    <link>
+      <name>Composite/USB/COMPOSITE/CDC_ACM/usbd_cdc_acm_if.c</name>
+      <type>1</type>
+      <location>PARENT-2-PROJECT_LOC/Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usbd_cdc_acm_if.c</location>
+    </link>
+    <link>
+      <name>Composite/USB/COMPOSITE/HID_MOUSE/usbd_hid_mouse.c</name>
+      <type>1</type>
+      <location>PARENT-2-PROJECT_LOC/Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Class/HID_MOUSE/Src/usbd_hid_mouse.c</location>
+    </link>
+  </linkedResources>
+</projectDescription>
+

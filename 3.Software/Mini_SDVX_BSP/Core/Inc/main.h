@@ -1,3 +1,4 @@
+#include <sys/cdefs.h>
 /* USER CODE BEGIN Header */
 /**
   ******************************************************************************
@@ -50,7 +51,7 @@ extern "C" {
 /* USER CODE END EM */
 
 /* Exported functions prototypes ---------------------------------------------*/
-void Error_Handler(void);
+_Noreturn void Error_Handler(void);
 
 /* USER CODE BEGIN EFP */
 void debug(uint8_t *c, uint32_t len);
