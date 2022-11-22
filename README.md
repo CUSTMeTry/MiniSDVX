@@ -1,4 +1,4 @@
-# MINISDVX 源代码
+# MiniSDVX 源代码
 
 1. Hardware 电路设计
 2. Firmware 编译好的固件
