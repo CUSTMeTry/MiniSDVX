@@ -20,7 +20,6 @@ extern "C"
 #define WS0  35
 #define RANDOM_MAX	255
 #define RANDOM_MIN  0
-extern uint16_t send_Buf[NUM];
 
 void WS_Load(void);
 void WS_LoadK(void);

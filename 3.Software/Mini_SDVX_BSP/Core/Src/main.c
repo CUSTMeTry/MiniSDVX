@@ -3,10 +3,11 @@
  ******************************************************************************
  * @file           : main.c
  * @brief          : Main program body
+ * @author         : MiTuan
  ******************************************************************************
  * @attention
  *
- * Copyright (c) 2022 STMicroelectronics.
+ * Copyright (c) 2022 MiTuan.
  * All rights reserved.
  *
  * This software is licensed under terms that can be found in the LICENSE file
@@ -29,11 +30,8 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "usb_device.h"
-#include "usbd_hid_keyboard.h"
-#include "usbd_hid_mouse.h"
 #include "usbd_cdc_acm.h"
 #include "bsp_rgb.h"
-//#include "bsp_24c02.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -41,6 +39,8 @@
 /* USER CODE END PTD */
 
 /* Private define ------------------------------------------------------------*/
+#pragma clang diagnostic push
+#pragma ide diagnostic ignored "EndlessLoop"
 /* USER CODE BEGIN PD */
 extern USBD_HandleTypeDef hUsbDevice;
 /* USER CODE END PD */
@@ -128,7 +128,7 @@ int main(void)
     // USBD_CDC_SetTxBuffer(0, &hUsbDevice, (uint8_t *)"RGB SEND", 9);
     // USBD_CDC_TransmitPacket(0, &hUsbDevice);
     //blinkWithKey(5);
-    soloShow(30);
+    soloShow(100);
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
@@ -179,6 +179,10 @@ void SystemClock_Config(void)
   {
     Error_Handler();
   }
+
+  /** Enables the Clock Security System
+  */
+  HAL_RCC_EnableCSS();
 }
 
 /* USER CODE BEGIN 4 */
@@ -216,3 +220,5 @@ void assert_failed(uint8_t *file, uint32_t line)
   /* USER CODE END 6 */
 }
 #endif /* USE_FULL_ASSERT */
+
+#pragma clang diagnostic pop

@@ -1,0 +1,521 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="Mini_SDVX"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="E:/App/IDE/jetbrains/CLion 2022.2.3/bin/mingw/bin/mingw32-make.exe -f &quot;E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="E:/App/IDE/jetbrains/CLion 2022.2.3/bin/mingw/bin/mingw32-make.exe -f &quot;E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="E:/App/IDE/jetbrains/CLion 2022.2.3/bin/mingw/bin/mingw32-make.exe -f &quot;E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="E:/App/IDE/jetbrains/CLion 2022.2.3/bin/mingw/bin/mingw32-make.exe -f &quot;E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Mini_SDVX.elf">
+				<Option output="E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/cmake-build-debug/Mini_SDVX.elf" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DUSE_HAL_DRIVER"/>
+					<Add option="-DSTM32F401xC"/>
+					<Add directory="E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/Core/Inc"/>
+					<Add directory="E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/Composite"/>
+					<Add directory="E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/Drivers/STM32F4xx_HAL_Driver/Inc"/>
+					<Add directory="E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy"/>
+					<Add directory="E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/Drivers/CMSIS/Device/ST/STM32F4xx/Include"/>
+					<Add directory="E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/Drivers/CMSIS/Include"/>
+					<Add directory="E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Class/COMPOSITE/Inc"/>
+					<Add directory="E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Class/HID_KEYBOARD/Inc"/>
+					<Add directory="E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Core/Inc"/>
+					<Add directory="E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App"/>
+					<Add directory="E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Target"/>
+					<Add directory="E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Class/CDC_ACM/Inc"/>
+					<Add directory="E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Class/HID_MOUSE/Inc"/>
+					<Add directory="E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/BSP/Inc"/>
+					<Add directory="e:\env\gcc-arm-none-eabi-10.3-2021.10\bin\../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/include/c++/10.3.1"/>
+					<Add directory="e:\env\gcc-arm-none-eabi-10.3-2021.10\bin\../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/include/c++/10.3.1/arm-none-eabi"/>
+					<Add directory="e:\env\gcc-arm-none-eabi-10.3-2021.10\bin\../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/include/c++/10.3.1/backward"/>
+					<Add directory="e:\env\gcc-arm-none-eabi-10.3-2021.10\bin\../lib/gcc/arm-none-eabi/10.3.1/include"/>
+					<Add directory="e:\env\gcc-arm-none-eabi-10.3-2021.10\bin\../lib/gcc/arm-none-eabi/10.3.1/include-fixed"/>
+					<Add directory="e:\env\gcc-arm-none-eabi-10.3-2021.10\bin\../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="E:/App/IDE/jetbrains/CLion 2022.2.3/bin/mingw/bin/mingw32-make.exe -f &quot;E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/cmake-build-debug/Makefile&quot;  VERBOSE=1 Mini_SDVX.elf"/>
+					<CompileFile command="E:/App/IDE/jetbrains/CLion 2022.2.3/bin/mingw/bin/mingw32-make.exe -f &quot;E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="E:/App/IDE/jetbrains/CLion 2022.2.3/bin/mingw/bin/mingw32-make.exe -f &quot;E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="E:/App/IDE/jetbrains/CLion 2022.2.3/bin/mingw/bin/mingw32-make.exe -f &quot;E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Mini_SDVX.elf/fast">
+				<Option output="E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/cmake-build-debug/Mini_SDVX.elf" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DUSE_HAL_DRIVER"/>
+					<Add option="-DSTM32F401xC"/>
+					<Add directory="E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/Core/Inc"/>
+					<Add directory="E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/Composite"/>
+					<Add directory="E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/Drivers/STM32F4xx_HAL_Driver/Inc"/>
+					<Add directory="E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy"/>
+					<Add directory="E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/Drivers/CMSIS/Device/ST/STM32F4xx/Include"/>
+					<Add directory="E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/Drivers/CMSIS/Include"/>
+					<Add directory="E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Class/COMPOSITE/Inc"/>
+					<Add directory="E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Class/HID_KEYBOARD/Inc"/>
+					<Add directory="E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Core/Inc"/>
+					<Add directory="E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App"/>
+					<Add directory="E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Target"/>
+					<Add directory="E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Class/CDC_ACM/Inc"/>
+					<Add directory="E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Class/HID_MOUSE/Inc"/>
+					<Add directory="E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/BSP/Inc"/>
+					<Add directory="e:\env\gcc-arm-none-eabi-10.3-2021.10\bin\../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/include/c++/10.3.1"/>
+					<Add directory="e:\env\gcc-arm-none-eabi-10.3-2021.10\bin\../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/include/c++/10.3.1/arm-none-eabi"/>
+					<Add directory="e:\env\gcc-arm-none-eabi-10.3-2021.10\bin\../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/include/c++/10.3.1/backward"/>
+					<Add directory="e:\env\gcc-arm-none-eabi-10.3-2021.10\bin\../lib/gcc/arm-none-eabi/10.3.1/include"/>
+					<Add directory="e:\env\gcc-arm-none-eabi-10.3-2021.10\bin\../lib/gcc/arm-none-eabi/10.3.1/include-fixed"/>
+					<Add directory="e:\env\gcc-arm-none-eabi-10.3-2021.10\bin\../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="E:/App/IDE/jetbrains/CLion 2022.2.3/bin/mingw/bin/mingw32-make.exe -f &quot;E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/cmake-build-debug/Makefile&quot;  VERBOSE=1 Mini_SDVX.elf/fast"/>
+					<CompileFile command="E:/App/IDE/jetbrains/CLion 2022.2.3/bin/mingw/bin/mingw32-make.exe -f &quot;E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="E:/App/IDE/jetbrains/CLion 2022.2.3/bin/mingw/bin/mingw32-make.exe -f &quot;E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="E:/App/IDE/jetbrains/CLion 2022.2.3/bin/mingw/bin/mingw32-make.exe -f &quot;E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="E:/App/IDE/jetbrains/CLion 2022.2.3/bin/mingw/bin/mingw32-make.exe -f &quot;E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="E:/App/IDE/jetbrains/CLion 2022.2.3/bin/mingw/bin/mingw32-make.exe -f &quot;E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="E:/App/IDE/jetbrains/CLion 2022.2.3/bin/mingw/bin/mingw32-make.exe -f &quot;E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="E:/App/IDE/jetbrains/CLion 2022.2.3/bin/mingw/bin/mingw32-make.exe -f &quot;E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="E:/App/IDE/jetbrains/CLion 2022.2.3/bin/mingw/bin/mingw32-make.exe -f &quot;E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="E:/App/IDE/jetbrains/CLion 2022.2.3/bin/mingw/bin/mingw32-make.exe -f &quot;E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="E:/App/IDE/jetbrains/CLion 2022.2.3/bin/mingw/bin/mingw32-make.exe -f &quot;E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="E:/App/IDE/jetbrains/CLion 2022.2.3/bin/mingw/bin/mingw32-make.exe -f &quot;E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/BSP/Inc/bsp_24c02.h">
+			<Option target="Mini_SDVX.elf"/>
+		</Unit>
+		<Unit filename="E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/BSP/Inc/bsp_encoder.h">
+			<Option target="Mini_SDVX.elf"/>
+		</Unit>
+		<Unit filename="E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/BSP/Inc/bsp_key.h">
+			<Option target="Mini_SDVX.elf"/>
+		</Unit>
+		<Unit filename="E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/BSP/Inc/bsp_rgb.h">
+			<Option target="Mini_SDVX.elf"/>
+		</Unit>
+		<Unit filename="E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/BSP/Src/bsp_24c02.c">
+			<Option target="Mini_SDVX.elf"/>
+		</Unit>
+		<Unit filename="E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/BSP/Src/bsp_encoder.c">
+			<Option target="Mini_SDVX.elf"/>
+		</Unit>
+		<Unit filename="E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/BSP/Src/bsp_key.c">
+			<Option target="Mini_SDVX.elf"/>
+		</Unit>
+		<Unit filename="E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/BSP/Src/bsp_rgb.c">
+			<Option target="Mini_SDVX.elf"/>
+		</Unit>
+		<Unit filename="E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/Composite/AL94.I-CUBE-USBD-COMPOSITE_conf.h">
+			<Option target="Mini_SDVX.elf"/>
+		</Unit>
+		<Unit filename="E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/Core/Inc/adc.h">
+			<Option target="Mini_SDVX.elf"/>
+		</Unit>
+		<Unit filename="E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/Core/Inc/dma.h">
+			<Option target="Mini_SDVX.elf"/>
+		</Unit>
+		<Unit filename="E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/Core/Inc/gpio.h">
+			<Option target="Mini_SDVX.elf"/>
+		</Unit>
+		<Unit filename="E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/Core/Inc/i2c.h">
+			<Option target="Mini_SDVX.elf"/>
+		</Unit>
+		<Unit filename="E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/Core/Inc/main.h">
+			<Option target="Mini_SDVX.elf"/>
+		</Unit>
+		<Unit filename="E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/Core/Inc/spi.h">
+			<Option target="Mini_SDVX.elf"/>
+		</Unit>
+		<Unit filename="E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/Core/Inc/stm32f4xx_hal_conf.h">
+			<Option target="Mini_SDVX.elf"/>
+		</Unit>
+		<Unit filename="E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/Core/Inc/stm32f4xx_it.h">
+			<Option target="Mini_SDVX.elf"/>
+		</Unit>
+		<Unit filename="E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/Core/Inc/tim.h">
+			<Option target="Mini_SDVX.elf"/>
+		</Unit>
+		<Unit filename="E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/Core/Inc/usb_otg.h">
+			<Option target="Mini_SDVX.elf"/>
+		</Unit>
+		<Unit filename="E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/Core/Src/adc.c">
+			<Option target="Mini_SDVX.elf"/>
+		</Unit>
+		<Unit filename="E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/Core/Src/dma.c">
+			<Option target="Mini_SDVX.elf"/>
+		</Unit>
+		<Unit filename="E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/Core/Src/gpio.c">
+			<Option target="Mini_SDVX.elf"/>
+		</Unit>
+		<Unit filename="E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/Core/Src/i2c.c">
+			<Option target="Mini_SDVX.elf"/>
+		</Unit>
+		<Unit filename="E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/Core/Src/main.c">
+			<Option target="Mini_SDVX.elf"/>
+		</Unit>
+		<Unit filename="E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/Core/Src/spi.c">
+			<Option target="Mini_SDVX.elf"/>
+		</Unit>
+		<Unit filename="E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/Core/Src/stm32f4xx_hal_msp.c">
+			<Option target="Mini_SDVX.elf"/>
+		</Unit>
+		<Unit filename="E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/Core/Src/stm32f4xx_it.c">
+			<Option target="Mini_SDVX.elf"/>
+		</Unit>
+		<Unit filename="E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/Core/Src/syscalls.c">
+			<Option target="Mini_SDVX.elf"/>
+		</Unit>
+		<Unit filename="E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/Core/Src/system_stm32f4xx.c">
+			<Option target="Mini_SDVX.elf"/>
+		</Unit>
+		<Unit filename="E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/Core/Src/tim.c">
+			<Option target="Mini_SDVX.elf"/>
+		</Unit>
+		<Unit filename="E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/Core/Src/usb_otg.c">
+			<Option target="Mini_SDVX.elf"/>
+		</Unit>
+		<Unit filename="E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f401xc.h">
+			<Option target="Mini_SDVX.elf"/>
+		</Unit>
+		<Unit filename="E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h">
+			<Option target="Mini_SDVX.elf"/>
+		</Unit>
+		<Unit filename="E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h">
+			<Option target="Mini_SDVX.elf"/>
+		</Unit>
+		<Unit filename="E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/Drivers/CMSIS/Device/ST/STM32F4xx/LICENSE.txt">
+			<Option target="Mini_SDVX.elf"/>
+		</Unit>
+		<Unit filename="E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/Drivers/CMSIS/Include/cmsis_armcc.h">
+			<Option target="Mini_SDVX.elf"/>
+		</Unit>
+		<Unit filename="E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/Drivers/CMSIS/Include/cmsis_armclang.h">
+			<Option target="Mini_SDVX.elf"/>
+		</Unit>
+		<Unit filename="E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/Drivers/CMSIS/Include/cmsis_compiler.h">
+			<Option target="Mini_SDVX.elf"/>
+		</Unit>
+		<Unit filename="E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/Drivers/CMSIS/Include/cmsis_gcc.h">
+			<Option target="Mini_SDVX.elf"/>
+		</Unit>
+		<Unit filename="E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/Drivers/CMSIS/Include/cmsis_iccarm.h">
+			<Option target="Mini_SDVX.elf"/>
+		</Unit>
+		<Unit filename="E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/Drivers/CMSIS/Include/cmsis_version.h">
+			<Option target="Mini_SDVX.elf"/>
+		</Unit>
+		<Unit filename="E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/Drivers/CMSIS/Include/core_armv8mbl.h">
+			<Option target="Mini_SDVX.elf"/>
+		</Unit>
+		<Unit filename="E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/Drivers/CMSIS/Include/core_armv8mml.h">
+			<Option target="Mini_SDVX.elf"/>
+		</Unit>
+		<Unit filename="E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/Drivers/CMSIS/Include/core_cm0.h">
+			<Option target="Mini_SDVX.elf"/>
+		</Unit>
+		<Unit filename="E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/Drivers/CMSIS/Include/core_cm0plus.h">
+			<Option target="Mini_SDVX.elf"/>
+		</Unit>
+		<Unit filename="E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/Drivers/CMSIS/Include/core_cm1.h">
+			<Option target="Mini_SDVX.elf"/>
+		</Unit>
+		<Unit filename="E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/Drivers/CMSIS/Include/core_cm23.h">
+			<Option target="Mini_SDVX.elf"/>
+		</Unit>
+		<Unit filename="E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/Drivers/CMSIS/Include/core_cm3.h">
+			<Option target="Mini_SDVX.elf"/>
+		</Unit>
+		<Unit filename="E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/Drivers/CMSIS/Include/core_cm33.h">
+			<Option target="Mini_SDVX.elf"/>
+		</Unit>
+		<Unit filename="E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/Drivers/CMSIS/Include/core_cm4.h">
+			<Option target="Mini_SDVX.elf"/>
+		</Unit>
+		<Unit filename="E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/Drivers/CMSIS/Include/core_cm7.h">
+			<Option target="Mini_SDVX.elf"/>
+		</Unit>
+		<Unit filename="E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/Drivers/CMSIS/Include/core_sc000.h">
+			<Option target="Mini_SDVX.elf"/>
+		</Unit>
+		<Unit filename="E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/Drivers/CMSIS/Include/core_sc300.h">
+			<Option target="Mini_SDVX.elf"/>
+		</Unit>
+		<Unit filename="E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/Drivers/CMSIS/Include/mpu_armv7.h">
+			<Option target="Mini_SDVX.elf"/>
+		</Unit>
+		<Unit filename="E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/Drivers/CMSIS/Include/mpu_armv8.h">
+			<Option target="Mini_SDVX.elf"/>
+		</Unit>
+		<Unit filename="E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/Drivers/CMSIS/Include/tz_context.h">
+			<Option target="Mini_SDVX.elf"/>
+		</Unit>
+		<Unit filename="E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/Drivers/CMSIS/LICENSE.txt">
+			<Option target="Mini_SDVX.elf"/>
+		</Unit>
+		<Unit filename="E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h">
+			<Option target="Mini_SDVX.elf"/>
+		</Unit>
+		<Unit filename="E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h">
+			<Option target="Mini_SDVX.elf"/>
+		</Unit>
+		<Unit filename="E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_adc.h">
+			<Option target="Mini_SDVX.elf"/>
+		</Unit>
+		<Unit filename="E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_adc_ex.h">
+			<Option target="Mini_SDVX.elf"/>
+		</Unit>
+		<Unit filename="E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h">
+			<Option target="Mini_SDVX.elf"/>
+		</Unit>
+		<Unit filename="E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h">
+			<Option target="Mini_SDVX.elf"/>
+		</Unit>
+		<Unit filename="E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h">
+			<Option target="Mini_SDVX.elf"/>
+		</Unit>
+		<Unit filename="E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma_ex.h">
+			<Option target="Mini_SDVX.elf"/>
+		</Unit>
+		<Unit filename="E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_exti.h">
+			<Option target="Mini_SDVX.elf"/>
+		</Unit>
+		<Unit filename="E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash.h">
+			<Option target="Mini_SDVX.elf"/>
+		</Unit>
+		<Unit filename="E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ex.h">
+			<Option target="Mini_SDVX.elf"/>
+		</Unit>
+		<Unit filename="E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h">
+			<Option target="Mini_SDVX.elf"/>
+		</Unit>
+		<Unit filename="E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h">
+			<Option target="Mini_SDVX.elf"/>
+		</Unit>
+		<Unit filename="E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h">
+			<Option target="Mini_SDVX.elf"/>
+		</Unit>
+		<Unit filename="E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c.h">
+			<Option target="Mini_SDVX.elf"/>
+		</Unit>
+		<Unit filename="E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c_ex.h">
+			<Option target="Mini_SDVX.elf"/>
+		</Unit>
+		<Unit filename="E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pcd.h">
+			<Option target="Mini_SDVX.elf"/>
+		</Unit>
+		<Unit filename="E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pcd_ex.h">
+			<Option target="Mini_SDVX.elf"/>
+		</Unit>
+		<Unit filename="E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h">
+			<Option target="Mini_SDVX.elf"/>
+		</Unit>
+		<Unit filename="E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h">
+			<Option target="Mini_SDVX.elf"/>
+		</Unit>
+		<Unit filename="E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h">
+			<Option target="Mini_SDVX.elf"/>
+		</Unit>
+		<Unit filename="E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h">
+			<Option target="Mini_SDVX.elf"/>
+		</Unit>
+		<Unit filename="E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h">
+			<Option target="Mini_SDVX.elf"/>
+		</Unit>
+		<Unit filename="E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h">
+			<Option target="Mini_SDVX.elf"/>
+		</Unit>
+		<Unit filename="E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h">
+			<Option target="Mini_SDVX.elf"/>
+		</Unit>
+		<Unit filename="E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_adc.h">
+			<Option target="Mini_SDVX.elf"/>
+		</Unit>
+		<Unit filename="E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_usb.h">
+			<Option target="Mini_SDVX.elf"/>
+		</Unit>
+		<Unit filename="E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/Drivers/STM32F4xx_HAL_Driver/LICENSE.txt">
+			<Option target="Mini_SDVX.elf"/>
+		</Unit>
+		<Unit filename="E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c">
+			<Option target="Mini_SDVX.elf"/>
+		</Unit>
+		<Unit filename="E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc.c">
+			<Option target="Mini_SDVX.elf"/>
+		</Unit>
+		<Unit filename="E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc_ex.c">
+			<Option target="Mini_SDVX.elf"/>
+		</Unit>
+		<Unit filename="E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c">
+			<Option target="Mini_SDVX.elf"/>
+		</Unit>
+		<Unit filename="E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c">
+			<Option target="Mini_SDVX.elf"/>
+		</Unit>
+		<Unit filename="E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c">
+			<Option target="Mini_SDVX.elf"/>
+		</Unit>
+		<Unit filename="E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c">
+			<Option target="Mini_SDVX.elf"/>
+		</Unit>
+		<Unit filename="E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c">
+			<Option target="Mini_SDVX.elf"/>
+		</Unit>
+		<Unit filename="E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c">
+			<Option target="Mini_SDVX.elf"/>
+		</Unit>
+		<Unit filename="E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c">
+			<Option target="Mini_SDVX.elf"/>
+		</Unit>
+		<Unit filename="E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c">
+			<Option target="Mini_SDVX.elf"/>
+		</Unit>
+		<Unit filename="E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c.c">
+			<Option target="Mini_SDVX.elf"/>
+		</Unit>
+		<Unit filename="E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c_ex.c">
+			<Option target="Mini_SDVX.elf"/>
+		</Unit>
+		<Unit filename="E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd.c">
+			<Option target="Mini_SDVX.elf"/>
+		</Unit>
+		<Unit filename="E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd_ex.c">
+			<Option target="Mini_SDVX.elf"/>
+		</Unit>
+		<Unit filename="E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c">
+			<Option target="Mini_SDVX.elf"/>
+		</Unit>
+		<Unit filename="E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c">
+			<Option target="Mini_SDVX.elf"/>
+		</Unit>
+		<Unit filename="E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c">
+			<Option target="Mini_SDVX.elf"/>
+		</Unit>
+		<Unit filename="E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c">
+			<Option target="Mini_SDVX.elf"/>
+		</Unit>
+		<Unit filename="E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c">
+			<Option target="Mini_SDVX.elf"/>
+		</Unit>
+		<Unit filename="E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c">
+			<Option target="Mini_SDVX.elf"/>
+		</Unit>
+		<Unit filename="E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c">
+			<Option target="Mini_SDVX.elf"/>
+		</Unit>
+		<Unit filename="E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_adc.c">
+			<Option target="Mini_SDVX.elf"/>
+		</Unit>
+		<Unit filename="E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_usb.c">
+			<Option target="Mini_SDVX.elf"/>
+		</Unit>
+		<Unit filename="E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usb_device.c">
+			<Option target="Mini_SDVX.elf"/>
+		</Unit>
+		<Unit filename="E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usb_device.h">
+			<Option target="Mini_SDVX.elf"/>
+		</Unit>
+		<Unit filename="E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usbd_cdc_acm_if.c">
+			<Option target="Mini_SDVX.elf"/>
+		</Unit>
+		<Unit filename="E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usbd_cdc_acm_if.h">
+			<Option target="Mini_SDVX.elf"/>
+		</Unit>
+		<Unit filename="E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usbd_desc.c">
+			<Option target="Mini_SDVX.elf"/>
+		</Unit>
+		<Unit filename="E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usbd_desc.h">
+			<Option target="Mini_SDVX.elf"/>
+		</Unit>
+		<Unit filename="E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Class/CDC_ACM/Inc/usbd_cdc_acm.h">
+			<Option target="Mini_SDVX.elf"/>
+		</Unit>
+		<Unit filename="E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Class/CDC_ACM/Src/usbd_cdc_acm.c">
+			<Option target="Mini_SDVX.elf"/>
+		</Unit>
+		<Unit filename="E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Class/COMPOSITE/Inc/usbd_composite.h">
+			<Option target="Mini_SDVX.elf"/>
+		</Unit>
+		<Unit filename="E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Class/COMPOSITE/Src/usbd_composite.c">
+			<Option target="Mini_SDVX.elf"/>
+		</Unit>
+		<Unit filename="E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Class/HID_KEYBOARD/Inc/usbd_hid_keyboard.h">
+			<Option target="Mini_SDVX.elf"/>
+		</Unit>
+		<Unit filename="E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Class/HID_KEYBOARD/Src/usbd_hid_keyboard.c">
+			<Option target="Mini_SDVX.elf"/>
+		</Unit>
+		<Unit filename="E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Class/HID_MOUSE/Inc/usbd_hid_mouse.h">
+			<Option target="Mini_SDVX.elf"/>
+		</Unit>
+		<Unit filename="E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Class/HID_MOUSE/Src/usbd_hid_mouse.c">
+			<Option target="Mini_SDVX.elf"/>
+		</Unit>
+		<Unit filename="E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Core/Inc/usbd_core.h">
+			<Option target="Mini_SDVX.elf"/>
+		</Unit>
+		<Unit filename="E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Core/Inc/usbd_ctlreq.h">
+			<Option target="Mini_SDVX.elf"/>
+		</Unit>
+		<Unit filename="E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Core/Inc/usbd_def.h">
+			<Option target="Mini_SDVX.elf"/>
+		</Unit>
+		<Unit filename="E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Core/Inc/usbd_ioreq.h">
+			<Option target="Mini_SDVX.elf"/>
+		</Unit>
+		<Unit filename="E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Core/Src/usbd_core.c">
+			<Option target="Mini_SDVX.elf"/>
+		</Unit>
+		<Unit filename="E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Core/Src/usbd_ctlreq.c">
+			<Option target="Mini_SDVX.elf"/>
+		</Unit>
+		<Unit filename="E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Core/Src/usbd_ioreq.c">
+			<Option target="Mini_SDVX.elf"/>
+		</Unit>
+		<Unit filename="E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Target/usbd_conf.c">
+			<Option target="Mini_SDVX.elf"/>
+		</Unit>
+		<Unit filename="E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Target/usbd_conf.h">
+			<Option target="Mini_SDVX.elf"/>
+		</Unit>
+		<Unit filename="E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/STM32F401CCUx_FLASH.ld">
+			<Option target="Mini_SDVX.elf"/>
+		</Unit>
+		<Unit filename="E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/startup/startup_stm32f401xc.s">
+			<Option target="Mini_SDVX.elf"/>
+		</Unit>
+		<Unit filename="E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

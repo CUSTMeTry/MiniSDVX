@@ -1,7 +1,7 @@
 #include "bsp_rgb.h"
 
-uint16_t send_Buf[NUM];
-uint16_t send_BufK[NUM];
+volatile uint16_t send_Buf[NUM];
+volatile uint16_t send_BufK[NUM];
 extern uint8_t keyIsPress[9];
 
 // 启动DMA载入数据
@@ -197,21 +197,17 @@ void rainbow(uint8_t wait)
 		{
 			WS281x_SetPixelColor(i, Wheel((i + j) & 255));
 		}
-	}
-	WS_Load();
+        WS_Load();
+    }
 }
 
 void rainbowCycle(uint8_t wait)
 {
-	uint32_t timestamp = HAL_GetTick();
-	uint16_t i;
-	static uint8_t j;
-	static uint32_t next_time = 0;
-
-	static uint8_t loop = 0;
-	if (loop == 0)
-		next_time = timestamp;
-	loop = 1; //首次调用初始化
+    static uint8_t j = 0;
+    static uint32_t next_time = 0;
+    static uint32_t timestamp = 0;
+    timestamp = HAL_GetTick();
+    uint16_t i;
 
 	if ((timestamp > next_time)) // && (timestamp - next_time < wait*5))
 	{
@@ -221,26 +217,24 @@ void rainbowCycle(uint8_t wait)
 		{
 			WS281x_SetPixelColor(i, Wheel(((i * 256 / (PIXEL_NUM)) + j) & 255));
 		}
-	}
-	WS_Load();
+        WS_Load();
+    }
+}
+
+void rgbIInit(){
+
 }
 
 void soloShow(uint8_t wait)
 {
-	uint32_t timestamp = HAL_GetTick();
-	uint16_t i;
-	static uint8_t j;
-	static uint32_t next_time = 0;
-
-	static uint8_t loop = 0;
-	if (loop == 0)
-		next_time = timestamp;
-	loop = 1; //首次调用初始化
-
-	if ((timestamp > next_time)) // && (timestamp - next_time < wait*5))
+    static uint8_t j = 0;
+    static uint32_t next_time = 0;
+    static uint32_t timestamp = 0;
+    timestamp = HAL_GetTick();
+    uint16_t i;
+	if ((timestamp > next_time))
 	{
-		j++;
-		if (j >= PIXEL_NUM)
+		if (j > PIXEL_NUM)
 		{
 			j = 0;
 		}
@@ -250,8 +244,9 @@ void soloShow(uint8_t wait)
 			WS281x_SetPixelColor(i, 0);
 		}
 		WS281x_SetPixelColor(j, WS281x_Color(j * 3, 0,  200 - j * 3));
-	}
-	WS_Load();
+        j++;
+        WS_Load();
+    }
 }
 
 void blinkWithKey(uint8_t wait)
@@ -281,7 +276,7 @@ void blinkWithKey(uint8_t wait)
 			{
 				blinkWithKeyTimeTick[i]-=8;
 			}else{
-				blinkWithKeyTimeTick[i] = 0; 
+				blinkWithKeyTimeTick[i] = 0;
 			}
 			WS281x_SetPixelRGBK(i, 0, 0, blinkWithKeyTimeTick[i]);
 		}

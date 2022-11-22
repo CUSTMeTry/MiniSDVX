@@ -1,0 +1,10 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/startup/startup_stm32f401xc.s
+
