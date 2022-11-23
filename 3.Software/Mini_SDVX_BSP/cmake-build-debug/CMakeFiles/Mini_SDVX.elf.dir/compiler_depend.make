@@ -104,11 +104,7 @@ CMakeFiles/Mini_SDVX.elf.dir/BSP/Src/bsp_key.c.obj: ../BSP/Src/bsp_key.c \
   ../Core/Inc/spi.h \
   ../Core/Inc/main.h \
   E:/Env/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/cdefs.h \
-  ../Core/Inc/i2c.h \
-  ../BSP/Inc/bsp_rgb.h \
-  ../Core/Inc/main.h \
-  ../Core/Inc/dma.h \
-  ../Core/Inc/tim.h
+  ../Core/Inc/i2c.h
 
 CMakeFiles/Mini_SDVX.elf.dir/BSP/Src/bsp_rgb.c.obj: ../BSP/Src/bsp_rgb.c \
   ../BSP/Inc/bsp_rgb.h \

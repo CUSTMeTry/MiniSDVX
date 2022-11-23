@@ -1,7 +1,6 @@
 #include "bsp_key.h"
 #include "spi.h"
 #include "i2c.h"
-#include "bsp_rgb.h"
 
 uint16_t lastData;
 uint16_t keyData;
@@ -13,9 +12,11 @@ uint8_t step = 2;
 
 uint8_t keyCode[9] = {4, 5, 6, 7, 8, 9, 10, 11, 12};
 uint16_t keyFlag[8] = {0x0001 << 8, 0x0001 << 9, 0x0001 << 10, 0x0001 << 11, 0x0001 << 15, 0x0001 << 14, 0x0001 << 13, 0x0001 << 12};
+uint16_t functionKeyFlag[4] = {0x0001 << 0, 0x0001 << 1, 0x0001 << 2, 0x0001 << 3};
 
 uint8_t keyboardReport[11] = {0};
-uint8_t keyIsPress[9] = {0};
+uint8_t isKeyPressed[9] = {0};
+uint8_t isFunctionKeyPressed[4] = {0};
 
 uint8_t changeFlag;
 
@@ -69,13 +70,25 @@ uint8_t keyboardBitDecode()
         {
             if (keyFlag[i] & keyData)
             {
-                keyIsPress[i + 1] = 0;
+                isKeyPressed[i + 1] = 0;
                 keyboardReport[i + 3] = 0;
             }
             else
             {
-                keyIsPress[i + 1] = 1;
+                isKeyPressed[i + 1] = 1;
                 keyboardReport[i + 3] = keyCode[i];
+            }
+        }
+
+        for(i = 0; i < 4; i++)
+        {
+            if(functionKeyFlag[i] & keyData)
+            {
+                isFunctionKeyPressed[i] = 0;
+            }
+            else
+            {
+                isFunctionKeyPressed[i] = 1;
             }
         }
         lastData = keyData;
@@ -90,12 +103,12 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
     {
         if (HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_0))
         {
-            keyIsPress[0] = 0;
+            isKeyPressed[0] = 0;
             keyboardReport[2] = 0;
         }
         else
         {
-            keyIsPress[0] = 1;
+            isKeyPressed[0] = 1;
             keyboardReport[2] = keyCode[8];
         }
         return;
