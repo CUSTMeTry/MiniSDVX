@@ -253,9 +253,7 @@ void soloShow(uint8_t wait)
 
 void blinkWithKey(uint8_t wait)
 {
-
 	uint32_t timestamp = HAL_GetTick();
-	uint16_t i;
 	static uint8_t j;
 	static uint32_t next_time = 0;
 	static uint8_t blinkWithKeyTimeTick[9] = {0};

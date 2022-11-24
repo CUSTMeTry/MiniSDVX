@@ -101,8 +101,24 @@ namespace MiniSDVX_Windows.Helper
                 {
                     data[2] = 0;
                 }
-                data[3] = (byte)(int)dataPack.LEncoder;
-                data[4] = (byte)(int)dataPack.REncoder;
+                data[3] = (byte)(int)(dataPack.LEncoder);
+                data[4] = (byte)(int)(dataPack.REncoder);
+                if (sp.IsOpen)
+                {
+                    foreach (var item in data)
+                    {
+                        Debug.Write(item + " ");
+                    }
+                    Debug.WriteLine(" ");
+
+                    sp.Write(data, 0, 10);
+                }
+
+                //延迟10毫秒
+                Task.Delay(10);
+
+                //第三次发送
+                data[1] = 1;
                 if (sp.IsOpen)
                 {
                     foreach (var item in data)

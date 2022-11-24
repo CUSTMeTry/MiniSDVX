@@ -30,8 +30,8 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "usb_device.h"
-#include "usbd_cdc_acm.h"
-#include "bsp_rgb.h"
+//#include "usbd_cdc_acm.h"
+#include "bsp.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -39,8 +39,6 @@
 /* USER CODE END PTD */
 
 /* Private define ------------------------------------------------------------*/
-#pragma clang diagnostic push
-#pragma ide diagnostic ignored "EndlessLoop"
 /* USER CODE BEGIN PD */
 extern USBD_HandleTypeDef hUsbDevice;
 /* USER CODE END PD */
@@ -64,11 +62,11 @@ void SystemClock_Config(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-void debug(uint8_t *c, uint32_t len)
-{
-  USBD_CDC_SetTxBuffer(0, &hUsbDevice, c, len);
-  USBD_CDC_TransmitPacket(0, &hUsbDevice);
-}
+//void debug(uint8_t *c, uint32_t len)
+//{
+//  USBD_CDC_SetTxBuffer(0, &hUsbDevice, c, len);
+//  USBD_CDC_TransmitPacket(0, &hUsbDevice);
+//}
 /* USER CODE END 0 */
 
 /**
@@ -112,8 +110,10 @@ int main(void)
   /* USER CODE BEGIN 2 */
   MX_USB_DEVICE_Init();
   HAL_TIM_Base_Start_IT(&htim3);
-  WS_CloseAll();
-  WS_CloseAllK();
+
+
+
+  bspInit();
   // AT24CXX_Init();
   /* USER CODE END 2 */
 
@@ -128,7 +128,7 @@ int main(void)
     // USBD_CDC_SetTxBuffer(0, &hUsbDevice, (uint8_t *)"RGB SEND", 9);
     // USBD_CDC_TransmitPacket(0, &hUsbDevice);
     //blinkWithKey(5);
-    soloShow(100);
+    //soloShow(100);
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
@@ -220,5 +220,3 @@ void assert_failed(uint8_t *file, uint32_t line)
   /* USER CODE END 6 */
 }
 #endif /* USE_FULL_ASSERT */
-
-#pragma clang diagnostic pop

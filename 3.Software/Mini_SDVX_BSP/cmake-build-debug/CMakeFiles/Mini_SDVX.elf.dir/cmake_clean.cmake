@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/Mini_SDVX.elf.dir/BSP/Src/bsp_24c02.c.obj"
-  "CMakeFiles/Mini_SDVX.elf.dir/BSP/Src/bsp_24c02.c.obj.d"
+  "CMakeFiles/Mini_SDVX.elf.dir/BSP/Src/bsp.c.obj"
+  "CMakeFiles/Mini_SDVX.elf.dir/BSP/Src/bsp.c.obj.d"
   "CMakeFiles/Mini_SDVX.elf.dir/BSP/Src/bsp_encoder.c.obj"
   "CMakeFiles/Mini_SDVX.elf.dir/BSP/Src/bsp_encoder.c.obj.d"
   "CMakeFiles/Mini_SDVX.elf.dir/BSP/Src/bsp_key.c.obj"

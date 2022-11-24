@@ -52,7 +52,7 @@ extern int8_t RCount;
 extern uint8_t keyboardReport[11];
 
 uint8_t mouseReport[4] = {0};
-uint8_t keyboardRefrsh[11] = {0};
+uint8_t keyboardRefresh[11] = {0};
 uint32_t TickTim5 = 0; 
 /* USER CODE END PV */
 
@@ -239,10 +239,22 @@ void TIM3_IRQHandler(void)
   if (keyboardBitDecode())
   {
     USBD_HID_Keybaord_SendReport(&hUsbDevice, keyboardReport, 11);
-    USBD_HID_Keybaord_SendReport(&hUsbDevice, keyboardRefrsh, 11);
+    USBD_HID_Keybaord_SendReport(&hUsbDevice, keyboardRefresh, 11);
   }
   if (RCount != 0 || LCount != 0)
   {
+      if(RCount > 100){
+          RCount = 100;
+      }
+      if(LCount > 100){
+          LCount = 100;
+      }
+      if(RCount < -100){
+          RCount = -100;
+      }
+      if(LCount < -100){
+          LCount = -100;
+      }
     mouseReport[1] = LCount;
     LCount = 0;
     mouseReport[2] = RCount;

@@ -68,19 +68,19 @@ include CMakeFiles/Mini_SDVX.elf.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/Mini_SDVX.elf.dir/flags.make
 
-CMakeFiles/Mini_SDVX.elf.dir/BSP/Src/bsp_24c02.c.obj: CMakeFiles/Mini_SDVX.elf.dir/flags.make
-CMakeFiles/Mini_SDVX.elf.dir/BSP/Src/bsp_24c02.c.obj: ../BSP/Src/bsp_24c02.c
-CMakeFiles/Mini_SDVX.elf.dir/BSP/Src/bsp_24c02.c.obj: CMakeFiles/Mini_SDVX.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=E:\BaiduSyncdisk\Project\Development\Hardware\MiniSDVX\3.Software\Mini_SDVX_BSP\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/Mini_SDVX.elf.dir/BSP/Src/bsp_24c02.c.obj"
-	E:\Env\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Mini_SDVX.elf.dir/BSP/Src/bsp_24c02.c.obj -MF CMakeFiles\Mini_SDVX.elf.dir\BSP\Src\bsp_24c02.c.obj.d -o CMakeFiles\Mini_SDVX.elf.dir\BSP\Src\bsp_24c02.c.obj -c E:\BaiduSyncdisk\Project\Development\Hardware\MiniSDVX\3.Software\Mini_SDVX_BSP\BSP\Src\bsp_24c02.c
+CMakeFiles/Mini_SDVX.elf.dir/BSP/Src/bsp.c.obj: CMakeFiles/Mini_SDVX.elf.dir/flags.make
+CMakeFiles/Mini_SDVX.elf.dir/BSP/Src/bsp.c.obj: ../BSP/Src/bsp.c
+CMakeFiles/Mini_SDVX.elf.dir/BSP/Src/bsp.c.obj: CMakeFiles/Mini_SDVX.elf.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=E:\BaiduSyncdisk\Project\Development\Hardware\MiniSDVX\3.Software\Mini_SDVX_BSP\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/Mini_SDVX.elf.dir/BSP/Src/bsp.c.obj"
+	E:\Env\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Mini_SDVX.elf.dir/BSP/Src/bsp.c.obj -MF CMakeFiles\Mini_SDVX.elf.dir\BSP\Src\bsp.c.obj.d -o CMakeFiles\Mini_SDVX.elf.dir\BSP\Src\bsp.c.obj -c E:\BaiduSyncdisk\Project\Development\Hardware\MiniSDVX\3.Software\Mini_SDVX_BSP\BSP\Src\bsp.c
 
-CMakeFiles/Mini_SDVX.elf.dir/BSP/Src/bsp_24c02.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Mini_SDVX.elf.dir/BSP/Src/bsp_24c02.c.i"
-	E:\Env\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E E:\BaiduSyncdisk\Project\Development\Hardware\MiniSDVX\3.Software\Mini_SDVX_BSP\BSP\Src\bsp_24c02.c > CMakeFiles\Mini_SDVX.elf.dir\BSP\Src\bsp_24c02.c.i
+CMakeFiles/Mini_SDVX.elf.dir/BSP/Src/bsp.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Mini_SDVX.elf.dir/BSP/Src/bsp.c.i"
+	E:\Env\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E E:\BaiduSyncdisk\Project\Development\Hardware\MiniSDVX\3.Software\Mini_SDVX_BSP\BSP\Src\bsp.c > CMakeFiles\Mini_SDVX.elf.dir\BSP\Src\bsp.c.i
 
-CMakeFiles/Mini_SDVX.elf.dir/BSP/Src/bsp_24c02.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Mini_SDVX.elf.dir/BSP/Src/bsp_24c02.c.s"
-	E:\Env\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S E:\BaiduSyncdisk\Project\Development\Hardware\MiniSDVX\3.Software\Mini_SDVX_BSP\BSP\Src\bsp_24c02.c -o CMakeFiles\Mini_SDVX.elf.dir\BSP\Src\bsp_24c02.c.s
+CMakeFiles/Mini_SDVX.elf.dir/BSP/Src/bsp.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Mini_SDVX.elf.dir/BSP/Src/bsp.c.s"
+	E:\Env\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S E:\BaiduSyncdisk\Project\Development\Hardware\MiniSDVX\3.Software\Mini_SDVX_BSP\BSP\Src\bsp.c -o CMakeFiles\Mini_SDVX.elf.dir\BSP\Src\bsp.c.s
 
 CMakeFiles/Mini_SDVX.elf.dir/BSP/Src/bsp_encoder.c.obj: CMakeFiles/Mini_SDVX.elf.dir/flags.make
 CMakeFiles/Mini_SDVX.elf.dir/BSP/Src/bsp_encoder.c.obj: ../BSP/Src/bsp_encoder.c
@@ -797,7 +797,7 @@ CMakeFiles/Mini_SDVX.elf.dir/startup/startup_stm32f401xc.s.s: cmake_force
 
 # Object files for target Mini_SDVX.elf
 Mini_SDVX_elf_OBJECTS = \
-"CMakeFiles/Mini_SDVX.elf.dir/BSP/Src/bsp_24c02.c.obj" \
+"CMakeFiles/Mini_SDVX.elf.dir/BSP/Src/bsp.c.obj" \
 "CMakeFiles/Mini_SDVX.elf.dir/BSP/Src/bsp_encoder.c.obj" \
 "CMakeFiles/Mini_SDVX.elf.dir/BSP/Src/bsp_key.c.obj" \
 "CMakeFiles/Mini_SDVX.elf.dir/BSP/Src/bsp_rgb.c.obj" \
@@ -853,7 +853,7 @@ Mini_SDVX_elf_OBJECTS = \
 # External object files for target Mini_SDVX.elf
 Mini_SDVX_elf_EXTERNAL_OBJECTS =
 
-Mini_SDVX.elf: CMakeFiles/Mini_SDVX.elf.dir/BSP/Src/bsp_24c02.c.obj
+Mini_SDVX.elf: CMakeFiles/Mini_SDVX.elf.dir/BSP/Src/bsp.c.obj
 Mini_SDVX.elf: CMakeFiles/Mini_SDVX.elf.dir/BSP/Src/bsp_encoder.c.obj
 Mini_SDVX.elf: CMakeFiles/Mini_SDVX.elf.dir/BSP/Src/bsp_key.c.obj
 Mini_SDVX.elf: CMakeFiles/Mini_SDVX.elf.dir/BSP/Src/bsp_rgb.c.obj

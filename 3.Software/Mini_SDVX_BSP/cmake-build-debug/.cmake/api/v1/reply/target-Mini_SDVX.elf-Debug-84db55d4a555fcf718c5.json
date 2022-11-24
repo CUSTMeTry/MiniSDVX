@@ -28,7 +28,13 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 65,
+				"line" : 64,
+				"parent" : 0
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 60,
 				"parent" : 0
 			},
 			{
@@ -41,12 +47,6 @@
 				"command" : 1,
 				"file" : 0,
 				"line" : 62,
-				"parent" : 0
-			},
-			{
-				"command" : 1,
-				"file" : 0,
-				"line" : 63,
 				"parent" : 0
 			},
 			{
@@ -76,19 +76,13 @@
 			{
 				"command" : 3,
 				"file" : 0,
-				"line" : 55,
+				"line" : 54,
 				"parent" : 0
 			},
 			{
 				"command" : 4,
 				"file" : 0,
 				"line" : 52,
-				"parent" : 0
-			},
-			{
-				"command" : 4,
-				"file" : 0,
-				"line" : 53,
 				"parent" : 0
 			}
 		]
@@ -160,6 +154,10 @@
 				},
 				{
 					"backtrace" : 10,
+					"path" : "E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/BSP/Inc"
+				},
+				{
+					"backtrace" : 10,
 					"path" : "E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/Composite"
 				},
 				{
@@ -205,10 +203,6 @@
 				{
 					"backtrace" : 10,
 					"path" : "E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Class/HID_MOUSE/Inc"
-				},
-				{
-					"backtrace" : 11,
-					"path" : "E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/BSP/Inc"
 				}
 			],
 			"language" : "C",
@@ -227,7 +221,6 @@
 				6,
 				7,
 				19,
-				20,
 				21,
 				22,
 				23,
@@ -238,7 +231,7 @@
 				28,
 				29,
 				30,
-				85,
+				31,
 				86,
 				87,
 				88,
@@ -263,16 +256,17 @@
 				107,
 				108,
 				109,
-				111,
-				113,
-				116,
-				118,
-				120,
-				122,
-				127,
+				110,
+				112,
+				114,
+				117,
+				119,
+				121,
+				123,
 				128,
 				129,
-				130
+				130,
+				131
 			]
 		},
 		{
@@ -345,6 +339,10 @@
 				},
 				{
 					"backtrace" : 10,
+					"path" : "E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/BSP/Inc"
+				},
+				{
+					"backtrace" : 10,
 					"path" : "E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/Composite"
 				},
 				{
@@ -390,16 +388,12 @@
 				{
 					"backtrace" : 10,
 					"path" : "E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Class/HID_MOUSE/Inc"
-				},
-				{
-					"backtrace" : 11,
-					"path" : "E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/BSP/Inc"
 				}
 			],
 			"language" : "ASM",
 			"sourceIndexes" : 
 			[
-				132
+				133
 			]
 		}
 	],
@@ -477,10 +471,9 @@
 				16,
 				17,
 				18,
-				31,
 				32,
 				33,
-				35,
+				34,
 				36,
 				37,
 				38,
@@ -501,7 +494,7 @@
 				53,
 				54,
 				55,
-				57,
+				56,
 				58,
 				59,
 				60,
@@ -528,18 +521,19 @@
 				81,
 				82,
 				83,
-				110,
-				112,
-				114,
+				84,
+				111,
+				113,
 				115,
-				117,
-				119,
-				121,
-				123,
+				116,
+				118,
+				120,
+				122,
 				124,
 				125,
 				126,
-				131
+				127,
+				132
 			]
 		},
 		{
@@ -551,7 +545,6 @@
 				6,
 				7,
 				19,
-				20,
 				21,
 				22,
 				23,
@@ -562,7 +555,7 @@
 				28,
 				29,
 				30,
-				85,
+				31,
 				86,
 				87,
 				88,
@@ -587,27 +580,29 @@
 				107,
 				108,
 				109,
-				111,
-				113,
-				116,
-				118,
-				120,
-				122,
-				127,
+				110,
+				112,
+				114,
+				117,
+				119,
+				121,
+				123,
 				128,
 				129,
-				130
+				130,
+				131
 			]
 		},
 		{
 			"name" : "",
 			"sourceIndexes" : 
 			[
-				34,
-				56,
-				84,
-				132,
-				133
+				20,
+				35,
+				57,
+				85,
+				133,
+				134
 			]
 		}
 	],
@@ -615,7 +610,7 @@
 	[
 		{
 			"backtrace" : 1,
-			"path" : "BSP/Inc/bsp_24c02.h",
+			"path" : "BSP/Inc/bsp.h",
 			"sourceGroupIndex" : 0
 		},
 		{
@@ -636,7 +631,7 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "BSP/Src/bsp_24c02.c",
+			"path" : "BSP/Src/bsp.c",
 			"sourceGroupIndex" : 1
 		},
 		{
@@ -717,6 +712,11 @@
 			"compileGroupIndex" : 0,
 			"path" : "Core/Src/adc.c",
 			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "Core/Src/daplink.cfg",
+			"sourceGroupIndex" : 2
 		},
 		{
 			"backtrace" : 1,
