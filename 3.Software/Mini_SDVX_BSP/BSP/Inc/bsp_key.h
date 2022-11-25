@@ -1,5 +1,5 @@
-#ifndef __BSP_KEY_H__
-#define __BSP_KEY_H__
+#ifndef BSP_KEY_H__
+#define BSP_KEY_H__
 
 #ifdef __cplusplus
 extern "C" {
@@ -7,13 +7,9 @@ extern "C" {
 
 #include "stm32f4xx_hal.h"
 
-uint8_t _keyCodeinit();
-
-
-void keyboardInit(void);
 void keyboardGetData(void);
 uint8_t keyboardBitDecode(void);
-
+void keyEXIT();
 
 #ifdef __cplusplus
 extern }

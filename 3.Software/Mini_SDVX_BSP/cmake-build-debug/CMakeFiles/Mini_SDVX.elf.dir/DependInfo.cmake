@@ -21,6 +21,7 @@ set(CMAKE_TARGET_DEFINITIONS_ASM
 # The include file search paths:
 set(CMAKE_ASM_TARGET_INCLUDE_PATH
   "../Core/Inc"
+  "../BSP/Inc"
   "../Composite"
   "../Drivers/STM32F4xx_HAL_Driver/Inc"
   "../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy"
@@ -33,12 +34,11 @@ set(CMAKE_ASM_TARGET_INCLUDE_PATH
   "../Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Target"
   "../Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Class/CDC_ACM/Inc"
   "../Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Class/HID_MOUSE/Inc"
-  "../BSP/Inc"
   )
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/BSP/Src/bsp_24c02.c" "CMakeFiles/Mini_SDVX.elf.dir/BSP/Src/bsp_24c02.c.obj" "gcc" "CMakeFiles/Mini_SDVX.elf.dir/BSP/Src/bsp_24c02.c.obj.d"
+  "E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/BSP/Src/bsp.c" "CMakeFiles/Mini_SDVX.elf.dir/BSP/Src/bsp.c.obj" "gcc" "CMakeFiles/Mini_SDVX.elf.dir/BSP/Src/bsp.c.obj.d"
   "E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/BSP/Src/bsp_encoder.c" "CMakeFiles/Mini_SDVX.elf.dir/BSP/Src/bsp_encoder.c.obj" "gcc" "CMakeFiles/Mini_SDVX.elf.dir/BSP/Src/bsp_encoder.c.obj.d"
   "E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/BSP/Src/bsp_key.c" "CMakeFiles/Mini_SDVX.elf.dir/BSP/Src/bsp_key.c.obj" "gcc" "CMakeFiles/Mini_SDVX.elf.dir/BSP/Src/bsp_key.c.obj.d"
   "E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/BSP/Src/bsp_rgb.c" "CMakeFiles/Mini_SDVX.elf.dir/BSP/Src/bsp_rgb.c.obj" "gcc" "CMakeFiles/Mini_SDVX.elf.dir/BSP/Src/bsp_rgb.c.obj.d"

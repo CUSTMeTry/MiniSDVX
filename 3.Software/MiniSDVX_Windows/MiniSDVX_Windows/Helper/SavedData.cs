@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MiniSDVX_Windows.Helper
 {
@@ -14,7 +11,7 @@ namespace MiniSDVX_Windows.Helper
 
         public int CompareTo(KeyItem _obj)
         {
-            if(string.Compare(Name, _obj.Name, true) == 1)
+            if (string.Compare(Name, _obj.Name, true) == 1)
                 return 1;
             else
                 return -1;
@@ -38,9 +35,9 @@ namespace MiniSDVX_Windows.Helper
             string _ = "";
             foreach (var item in KeyItems)
             {
-      
-                    _ += item.ToString();
-                
+
+                _ += item.ToString();
+
             }
             return _;
         }

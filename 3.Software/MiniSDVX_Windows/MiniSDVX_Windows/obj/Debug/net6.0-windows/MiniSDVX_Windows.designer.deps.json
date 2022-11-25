@@ -22,6 +22,14 @@
           }
         }
       },
+      "OO.Keyboard/1.7.41": {
+        "runtime": {
+          "lib/net6.0/OO.Keyboard.dll": {
+            "assemblyVersion": "1.7.41.0",
+            "fileVersion": "1.7.41.0"
+          }
+        }
+      },
       "runtime.linux-arm.runtime.native.System.IO.Ports/6.0.0": {
         "runtimeTargets": {
           "runtimes/linux-arm/native/libSystem.IO.Ports.Native.so": {
@@ -144,6 +152,13 @@
       "sha512": "sha512-ppPFpBcvxdsfUonNcvITKqLl3bqxWbDCZIzDWHzjpdAHRFfZe0Dw9HmA0+za13IdyrgJwpkDTDA9fHaxOrt20A==",
       "path": "newtonsoft.json/13.0.1",
       "hashPath": "newtonsoft.json.13.0.1.nupkg.sha512"
+    },
+    "OO.Keyboard/1.7.41": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-KOgXeTfBIsHzrizskmfb3+o21BUrSv64zhIwL6wLEKcVhdmPnxxmOiS5ixpuK0Zh9KAI2DoziJr25evx6ZF2tQ==",
+      "path": "oo.keyboard/1.7.41",
+      "hashPath": "oo.keyboard.1.7.41.nupkg.sha512"
     },
     "runtime.linux-arm.runtime.native.System.IO.Ports/6.0.0": {
       "type": "package",

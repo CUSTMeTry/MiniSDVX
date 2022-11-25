@@ -1,5 +1,5 @@
-#ifndef __BSP_RGB_H__
-#define __BSP_RGB_H__
+#ifndef BSP_RGB_H_
+#define BSP_RGB_H_
 
 #ifdef __cplusplus
 extern "C"

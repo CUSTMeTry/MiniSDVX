@@ -2,8 +2,8 @@
 
 volatile uint16_t send_Buf[NUM];
 volatile uint16_t send_BufK[NUM];
-extern uint8_t keyIsPress[9];
-
+extern uint8_t isKeyPressed[9];
+extern uint8_t isFunctionKeyPressed[4];
 // 启动DMA载入数据
 void WS_Load(void)
 {
@@ -232,12 +232,9 @@ void soloShow(uint8_t wait)
     static uint32_t timestamp = 0;
     timestamp = HAL_GetTick();
     uint16_t i;
-	if ((timestamp > next_time))
+	if (timestamp > next_time && isFunctionKeyPressed[1])
 	{
-		if (j > PIXEL_NUM)
-		{
-			j = 0;
-		}
+
 		next_time = timestamp + wait;
 		for (i = 0; i < PIXEL_NUM; i++)
 		{
@@ -245,15 +242,18 @@ void soloShow(uint8_t wait)
 		}
 		WS281x_SetPixelColor(j, WS281x_Color(j * 3, 0,  200 - j * 3));
         j++;
+        if(j > PIXEL_NUM - 1)
+        {
+            j = 0;
+        }
+
         WS_Load();
     }
 }
 
 void blinkWithKey(uint8_t wait)
 {
-
 	uint32_t timestamp = HAL_GetTick();
-	uint16_t i;
 	static uint8_t j;
 	static uint32_t next_time = 0;
 	static uint8_t blinkWithKeyTimeTick[9] = {0};
@@ -263,14 +263,15 @@ void blinkWithKey(uint8_t wait)
 		next_time = timestamp;
 	loop = 1; //首次调用初始化
 
-	if ((timestamp > next_time)) // && (timestamp - next_time < wait*5))
+	if (timestamp > next_time ) // && (timestamp - next_time < wait*5))
 	{
 		next_time = timestamp + wait;
 		for (uint8_t i = 0; i < 9; i++)
 		{
-			if (keyIsPress[i])
+			if (isKeyPressed[i])
 			{
 				blinkWithKeyTimeTick[i] = 0xcc;
+                next_time += 20;
 			}
 			else if(blinkWithKeyTimeTick[i] > 7)
 			{

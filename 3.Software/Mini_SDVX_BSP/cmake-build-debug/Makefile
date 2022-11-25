@@ -128,29 +128,29 @@ Mini_SDVX.elf/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mini_SDVX.elf.dir\build.make CMakeFiles/Mini_SDVX.elf.dir/build
 .PHONY : Mini_SDVX.elf/fast
 
-BSP/Src/bsp_24c02.obj: BSP/Src/bsp_24c02.c.obj
-.PHONY : BSP/Src/bsp_24c02.obj
+BSP/Src/bsp.obj: BSP/Src/bsp.c.obj
+.PHONY : BSP/Src/bsp.obj
 
 # target to build an object file
-BSP/Src/bsp_24c02.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mini_SDVX.elf.dir\build.make CMakeFiles/Mini_SDVX.elf.dir/BSP/Src/bsp_24c02.c.obj
-.PHONY : BSP/Src/bsp_24c02.c.obj
+BSP/Src/bsp.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mini_SDVX.elf.dir\build.make CMakeFiles/Mini_SDVX.elf.dir/BSP/Src/bsp.c.obj
+.PHONY : BSP/Src/bsp.c.obj
 
-BSP/Src/bsp_24c02.i: BSP/Src/bsp_24c02.c.i
-.PHONY : BSP/Src/bsp_24c02.i
+BSP/Src/bsp.i: BSP/Src/bsp.c.i
+.PHONY : BSP/Src/bsp.i
 
 # target to preprocess a source file
-BSP/Src/bsp_24c02.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mini_SDVX.elf.dir\build.make CMakeFiles/Mini_SDVX.elf.dir/BSP/Src/bsp_24c02.c.i
-.PHONY : BSP/Src/bsp_24c02.c.i
+BSP/Src/bsp.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mini_SDVX.elf.dir\build.make CMakeFiles/Mini_SDVX.elf.dir/BSP/Src/bsp.c.i
+.PHONY : BSP/Src/bsp.c.i
 
-BSP/Src/bsp_24c02.s: BSP/Src/bsp_24c02.c.s
-.PHONY : BSP/Src/bsp_24c02.s
+BSP/Src/bsp.s: BSP/Src/bsp.c.s
+.PHONY : BSP/Src/bsp.s
 
 # target to generate assembly for a file
-BSP/Src/bsp_24c02.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mini_SDVX.elf.dir\build.make CMakeFiles/Mini_SDVX.elf.dir/BSP/Src/bsp_24c02.c.s
-.PHONY : BSP/Src/bsp_24c02.c.s
+BSP/Src/bsp.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mini_SDVX.elf.dir\build.make CMakeFiles/Mini_SDVX.elf.dir/BSP/Src/bsp.c.s
+.PHONY : BSP/Src/bsp.c.s
 
 BSP/Src/bsp_encoder.obj: BSP/Src/bsp_encoder.c.obj
 .PHONY : BSP/Src/bsp_encoder.obj
@@ -1369,9 +1369,9 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... Mini_SDVX.elf
-	@echo ... BSP/Src/bsp_24c02.obj
-	@echo ... BSP/Src/bsp_24c02.i
-	@echo ... BSP/Src/bsp_24c02.s
+	@echo ... BSP/Src/bsp.obj
+	@echo ... BSP/Src/bsp.i
+	@echo ... BSP/Src/bsp.s
 	@echo ... BSP/Src/bsp_encoder.obj
 	@echo ... BSP/Src/bsp_encoder.i
 	@echo ... BSP/Src/bsp_encoder.s
