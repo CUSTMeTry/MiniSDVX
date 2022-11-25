@@ -31,6 +31,7 @@
 #include "usbd_cdc_acm.h"
 
 /* USER CODE BEGIN INCLUDE */
+
 /* USER CODE END INCLUDE */
 
 /** @addtogroup STM32_USB_OTG_DEVICE_LIBRARY

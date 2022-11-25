@@ -271,6 +271,7 @@ void blinkWithKey(uint8_t wait)
 			if (isKeyPressed[i])
 			{
 				blinkWithKeyTimeTick[i] = 0xcc;
+                next_time += 20;
 			}
 			else if(blinkWithKeyTimeTick[i] > 7)
 			{

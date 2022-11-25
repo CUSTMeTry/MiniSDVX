@@ -37,8 +37,6 @@ uint8_t keyboardBitDecode()
     else
     {
         uint8_t i;
-        keyboardGetData();
-
         for (i = 0; i < 8; i++)
         {
             if (keyFlag[i] & keyData)
@@ -49,7 +47,7 @@ uint8_t keyboardBitDecode()
             else
             {
                 isKeyPressed[i + 1] = 1;
-                keyboardReport[i + 3] = keyCode[i];
+                keyboardReport[i + 3] = keyCode[i+1];
             }
         }
 
@@ -80,7 +78,7 @@ void keyEXIT(){
     else
     {
         isKeyPressed[0] = 1;
-        keyboardReport[2] = keyCode[8];
+        keyboardReport[2] = keyCode[0];
     }
 
 }

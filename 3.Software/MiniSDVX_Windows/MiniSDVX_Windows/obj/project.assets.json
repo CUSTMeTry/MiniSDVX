@@ -28,6 +28,15 @@
           }
         }
       },
+      "OO.Keyboard/1.7.41": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/OO.Keyboard.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0/OO.Keyboard.dll": {}
+        }
+      },
       "runtime.linux-arm.runtime.native.System.IO.Ports/6.0.0": {
         "type": "package",
         "runtimeTargets": {
@@ -230,6 +239,18 @@
         "packageIcon.png"
       ]
     },
+    "OO.Keyboard/1.7.41": {
+      "sha512": "KOgXeTfBIsHzrizskmfb3+o21BUrSv64zhIwL6wLEKcVhdmPnxxmOiS5ixpuK0Zh9KAI2DoziJr25evx6ZF2tQ==",
+      "type": "package",
+      "path": "oo.keyboard/1.7.41",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net6.0/OO.Keyboard.dll",
+        "oo.keyboard.1.7.41.nupkg.sha512",
+        "oo.keyboard.nuspec"
+      ]
+    },
     "runtime.linux-arm.runtime.native.System.IO.Ports/6.0.0": {
       "sha512": "75q52H7CSpgIoIDwXb9o833EvBZIXJ0mdPhz1E6jSisEXUBlSCPalC29cj3EXsjpuDwr0dj1LRXZepIQH/oL4Q==",
       "type": "package",
@@ -414,6 +435,7 @@
     "net6.0-windows7.0": [
       "HandyControl >= 3.3.0",
       "Newtonsoft.Json >= 13.0.1",
+      "OO.Keyboard >= 1.7.41",
       "System.IO.Ports >= 6.0.0",
       "System.Management >= 6.0.0"
     ]
@@ -469,6 +491,10 @@
           "Newtonsoft.Json": {
             "target": "Package",
             "version": "[13.0.1, )"
+          },
+          "OO.Keyboard": {
+            "target": "Package",
+            "version": "[1.7.41, )"
           },
           "System.IO.Ports": {
             "target": "Package",

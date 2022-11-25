@@ -101,7 +101,47 @@ CMakeFiles/Mini_SDVX.elf.dir/BSP/Src/bsp_encoder.c.obj: ../BSP/Src/bsp_encoder.c
   ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h \
   ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pcd.h \
   ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_usb.h \
-  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pcd_ex.h
+  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pcd_ex.h \
+  ../Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usb_device.h \
+  ../Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Core/Inc/usbd_def.h \
+  ../Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Target/usbd_conf.h \
+  E:/Env/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/stdio.h \
+  E:/Env/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/_ansi.h \
+  E:/Env/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/newlib.h \
+  E:/Env/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/config.h \
+  E:/Env/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/machine/ieeefp.h \
+  E:/Env/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/cdefs.h \
+  E:/Env/gcc-arm-none-eabi-10.3-2021.10/lib/gcc/arm-none-eabi/10.3.1/include/stdarg.h \
+  E:/Env/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/reent.h \
+  E:/Env/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/_ansi.h \
+  E:/Env/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/_types.h \
+  E:/Env/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/machine/_types.h \
+  E:/Env/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/lock.h \
+  E:/Env/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/types.h \
+  E:/Env/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/machine/endian.h \
+  E:/Env/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/machine/_endian.h \
+  E:/Env/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/select.h \
+  E:/Env/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/_sigset.h \
+  E:/Env/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/_timeval.h \
+  E:/Env/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/timespec.h \
+  E:/Env/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/_timespec.h \
+  E:/Env/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/_pthreadtypes.h \
+  E:/Env/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/sched.h \
+  E:/Env/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/machine/types.h \
+  E:/Env/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/stdio.h \
+  E:/Env/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/stdlib.h \
+  E:/Env/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/machine/stdlib.h \
+  E:/Env/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/alloca.h \
+  E:/Env/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/string.h \
+  E:/Env/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/_locale.h \
+  E:/Env/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/strings.h \
+  E:/Env/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/string.h \
+  ../Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Class/HID_MOUSE/Inc/usbd_hid_mouse.h \
+  ../Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Core/Inc/usbd_ioreq.h \
+  ../Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Core/Inc/usbd_def.h \
+  ../Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Core/Inc/usbd_core.h \
+  ../Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Core/Inc/usbd_ioreq.h \
+  ../Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Core/Inc/usbd_ctlreq.h
 
 CMakeFiles/Mini_SDVX.elf.dir/BSP/Src/bsp_key.c.obj: ../BSP/Src/bsp_key.c \
   ../BSP/Inc/bsp_key.h \
@@ -483,7 +523,8 @@ CMakeFiles/Mini_SDVX.elf.dir/Core/Src/main.c.obj: ../Core/Src/main.c \
   E:/Env/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/_locale.h \
   E:/Env/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/strings.h \
   E:/Env/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/string.h \
-  ../BSP/Inc/bsp.h
+  ../BSP/Inc/bsp.h \
+  ../BSP/Inc/bsp_rgb.h
 
 CMakeFiles/Mini_SDVX.elf.dir/Core/Src/spi.c.obj: ../Core/Src/spi.c \
   ../Core/Inc/spi.h \
@@ -2101,8 +2142,7 @@ CMakeFiles/Mini_SDVX.elf.dir/Middlewares/Third_Party/AL94_USB_Composite/COMPOSIT
   ../Composite/AL94.I-CUBE-USBD-COMPOSITE_conf.h \
   ../Core/Inc/tim.h \
   ../Core/Inc/main.h \
-  ../Core/Inc/i2c.h \
-  ../BSP/Inc/bsp.h
+  ../Core/Inc/i2c.h
 
 CMakeFiles/Mini_SDVX.elf.dir/Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usbd_desc.c.obj: ../Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usbd_desc.c \
   ../Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Core/Inc/usbd_core.h \
@@ -2900,8 +2940,6 @@ CMakeFiles/Mini_SDVX.elf.dir/Middlewares/Third_Party/AL94_USB_Composite/COMPOSIT
 
 ../BSP/Src/bsp.c:
 
-../BSP/Src/bsp_rgb.c:
-
 ../Drivers/CMSIS/Include/cmsis_version.h:
 
 ../Core/Inc/i2c.h:
@@ -2924,15 +2962,11 @@ CMakeFiles/Mini_SDVX.elf.dir/Middlewares/Third_Party/AL94_USB_Composite/COMPOSIT
 
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h:
 
-../Core/Inc/adc.h:
-
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:
 
 ../Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usbd_cdc_acm_if.h:
 
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h:
-
-../Core/Inc/spi.h:
 
 ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h:
 
@@ -2963,6 +2997,8 @@ E:/Env/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/features.h:
 E:/Env/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/_newlib_version.h:
 
 E:/Env/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/_intsup.h:
+
+E:/Env/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/newlib.h:
 
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_adc.h:
 
@@ -2996,8 +3032,6 @@ E:/Env/gcc-arm-none-eabi-10.3-2021.10/lib/gcc/arm-none-eabi/10.3.1/include/stdde
 
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_exti.h:
 
-../Core/Src/i2c.c:
-
 ../Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Core/Src/usbd_ioreq.c:
 
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma_ex.h:
@@ -3008,15 +3042,23 @@ E:/Env/gcc-arm-none-eabi-10.3-2021.10/lib/gcc/arm-none-eabi/10.3.1/include/stdde
 
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash.h:
 
+../Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Core/Inc/usbd_def.h:
+
 ../BSP/Inc/bsp_key.h:
 
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ex.h:
 
-../Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Target/usbd_conf.h:
+E:/Env/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/_ansi.h:
 
 ../Core/Src/dma.c:
 
+../Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Target/usbd_conf.h:
+
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c_ex.h:
+
+E:/Env/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/time.h:
+
+E:/Env/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/cdefs.h:
 
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h:
 
@@ -3024,45 +3066,23 @@ E:/Env/gcc-arm-none-eabi-10.3-2021.10/lib/gcc/arm-none-eabi/10.3.1/include/stdde
 
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h:
 
+E:/Env/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/stdio.h:
+
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pcd.h:
 
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pcd_ex.h:
 
-../BSP/Src/bsp_key.c:
-
-../Core/Src/adc.c:
-
-../Core/Src/gpio.c:
-
-../Core/Inc/usb_otg.h:
-
-../Core/Inc/gpio.h:
-
-../Core/Src/main.c:
-
-../Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usb_device.h:
-
-../Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Core/Inc/usbd_def.h:
-
-E:/Env/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/stdio.h:
-
-E:/Env/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/_ansi.h:
-
-E:/Env/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/newlib.h:
+E:/Env/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/reent.h:
 
 E:/Env/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/config.h:
+
+../Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usb_device.h:
 
 E:/Env/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/stdlib.h:
 
 E:/Env/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/machine/ieeefp.h:
 
-E:/Env/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/time.h:
-
-E:/Env/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/cdefs.h:
-
 E:/Env/gcc-arm-none-eabi-10.3-2021.10/lib/gcc/arm-none-eabi/10.3.1/include/stdarg.h:
-
-E:/Env/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/reent.h:
 
 E:/Env/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/_types.h:
 
@@ -3108,6 +3128,34 @@ E:/Env/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/strings.h:
 
 E:/Env/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/string.h:
 
+../Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Core/Inc/usbd_ioreq.h:
+
+../Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Class/HID_MOUSE/Inc/usbd_hid_mouse.h:
+
+../Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Core/Inc/usbd_core.h:
+
+../Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Core/Inc/usbd_ctlreq.h:
+
+../BSP/Src/bsp_key.c:
+
+../Core/Inc/spi.h:
+
+../BSP/Src/bsp_rgb.c:
+
+../Core/Src/adc.c:
+
+../Core/Inc/adc.h:
+
+../Core/Src/gpio.c:
+
+../Core/Inc/gpio.h:
+
+../Core/Src/i2c.c:
+
+../Core/Src/main.c:
+
+../Core/Inc/usb_otg.h:
+
 ../BSP/Inc/bsp.h:
 
 ../Core/Src/spi.c:
@@ -3121,14 +3169,6 @@ E:/Env/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/string.h:
 ../Core/Inc/stm32f4xx_it.h:
 
 ../Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Class/HID_KEYBOARD/Inc/usbd_hid_keyboard.h:
-
-../Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Class/HID_MOUSE/Inc/usbd_hid_mouse.h:
-
-../Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Core/Inc/usbd_ioreq.h:
-
-../Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Core/Inc/usbd_core.h:
-
-../Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Core/Inc/usbd_ctlreq.h:
 
 ../Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Class/CDC_ACM/Inc/usbd_cdc_acm.h:
 

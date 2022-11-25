@@ -32,6 +32,7 @@
 #include "usb_device.h"
 //#include "usbd_cdc_acm.h"
 #include "bsp.h"
+#include "bsp_rgb.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -127,7 +128,7 @@ int main(void)
     // HAL_Delay(500);
     // USBD_CDC_SetTxBuffer(0, &hUsbDevice, (uint8_t *)"RGB SEND", 9);
     // USBD_CDC_TransmitPacket(0, &hUsbDevice);
-    //blinkWithKey(5);
+    blinkWithKey(5);
     //soloShow(100);
     /* USER CODE END WHILE */
 

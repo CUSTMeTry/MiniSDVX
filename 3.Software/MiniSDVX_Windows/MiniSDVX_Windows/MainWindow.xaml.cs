@@ -1,21 +1,17 @@
-﻿using System;
+﻿using HandyControl.Controls;
+using HandyControl.Data;
+using HandyControl.Tools.Extension;
+using Microsoft.Win32;
+using MiniSDVX_Windows.Helper;
+using System;
 using System.Collections.Generic;
-
+using System.Diagnostics;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-
 using System.Windows.Input;
 using System.Windows.Media;
-
-using MiniSDVX_Windows.Helper;
-
-using HandyControl.Controls;
-using HandyControl.Data;
-
 using System.Windows.Threading;
-using Microsoft.Win32;
-using System.Diagnostics;
 
 namespace MiniSDVX_Windows
 {
@@ -57,12 +53,13 @@ namespace MiniSDVX_Windows
         private void CircleProgressBar_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
             Slider? slider = (Slider?)sender;
-            if(slider != null)
+            if (slider != null)
             {
-                if(slider.Name == "LEncSlider")
+                if (slider.Name == "LEncSlider")
                 {
                     dataPack.LEncoder = e.NewValue;
-                }else if(slider.Name == "REncSlider")
+                }
+                else if (slider.Name == "REncSlider")
                 {
                     dataPack.REncoder = e.NewValue;
                 }
@@ -71,38 +68,59 @@ namespace MiniSDVX_Windows
         private void Grid_KeyUp(object sender, KeyEventArgs e)
         {
             //Debug.WriteLine("-------------Keyup-----------------");
-
+            Key a = e.Key;
             if (currentButton != null)
             {
-                Debug.WriteLine(currentButton.Content);
-
-                int b = (int)e.Key;
-                keyboardData = e.Key.ToString();
-                  
-                int fontsize = 50;
-                while (fontsize * keyboardData.Length > 110 && fontsize > 10)
+                if(e.Key == Key.System)
                 {
-                    fontsize -= 2;
+                    a = e.SystemKey;
                 }
+
+                int b = 0;
+                keyboardData = "";
+                for (int i = 0; i < gu.KeyCovList.Count; i++)
+                {
+                    if((int)a == gu.KeyCovList[i].KeyCode)
+                    {
+                        keyboardData = gu.KeyCovList[i].Name;
+                        b = gu.KeyCovList[i].KeyValue;
+                    }
+                }
+
+                int fontsize = 50;
+                if(keyboardData.Length > 8)
+                {
+                    fontsize = 10;
+                }
+                else if (keyboardData.Length > 5)
+                {
+                    fontsize = 15;
+                }
+                else if(keyboardData.Length > 2)
+                {
+                    fontsize = 20;
+                }
+                
+
+
                 currentButton.FontSize = fontsize;
                 currentButton.Content = keyboardData;
-
-                    foreach (KeyItem k in dataPack.KeyItems!)
+                foreach (KeyItem k in dataPack.KeyItems!)
+                {
+                    if (k.Name == currentButton.Name)
                     {
-                        if (k.Name == currentButton.Name)
-                        {
-                            k.KeyCode = b;
-                            k.KeyString = keyboardData;
-                            return;
-                        }
+                        k.KeyCode = b;
+                        k.KeyString = keyboardData;
+                        return;
                     }
-                    KeyItem keyData = new()
-                    {
-                        Name = currentButton.Name,
-                        KeyCode = b,
-                        KeyString = keyboardData
-                    };
-                    dataPack.KeyItems!.Add(keyData);
+                }
+                KeyItem keyData = new()
+                {
+                    Name = currentButton.Name,
+                    KeyCode = b,
+                    KeyString = keyboardData
+                };
+                dataPack.KeyItems!.Add(keyData);
             }
         }
 
@@ -141,7 +159,7 @@ namespace MiniSDVX_Windows
 
         private void ClearCurrentButton(object sender, RoutedEventArgs e)
         {
-            if(currentButton != null)
+            if (currentButton != null)
             {
                 currentButton.BorderBrush = (Brush)FindResource("BorderBrush");
 
@@ -156,7 +174,7 @@ namespace MiniSDVX_Windows
                 SendSuccessMessage("还未连接到MiniSDVX的说");
             }
 
-            if(gu.SendSDVXMessage(dataPack) == 0)
+            if (gu.SendSDVXMessage(dataPack) == 0)
             {
                 SendSuccessMessage("写入成功");
             }
@@ -173,7 +191,7 @@ namespace MiniSDVX_Windows
             {
                 return;
             }
-            for (int i = 0; i < 9; i ++)
+            for (int i = 0; i < 9; i++)
             {
 
                 if (dataPack.KeyItems[i] != null && dataPack.KeyItems[i].Name != null)
@@ -187,9 +205,17 @@ namespace MiniSDVX_Windows
                         if (dataPack.KeyItems[i].KeyString != null)
                         {
                             int fontsize = 50;
-                            while (fontsize * dataPack.KeyItems[i].KeyString.Length > 110 && fontsize > 10)
+                            if (keyboardData.Length > 8)
                             {
-                                fontsize -= 2;
+                                fontsize = 10;
+                            }
+                            else if (keyboardData.Length > 5)
+                            {
+                                fontsize = 15;
+                            }
+                            else if (keyboardData.Length > 2)
+                            {
+                                fontsize = 20;
                             }
                             thisButton.FontSize = fontsize;
                             thisButton.Content = dataPack.KeyItems[i].KeyString;
@@ -200,7 +226,7 @@ namespace MiniSDVX_Windows
                         thisButton.Content = dataPack.KeyItems[i].Name;
 
                     }
-                   
+
                 }
             }
             LEncSlider.Value = dataPack.LEncoder;
@@ -212,7 +238,7 @@ namespace MiniSDVX_Windows
 
         private void ReadSDVX(object sender, RoutedEventArgs e)
         {
-           gu.ReadSDVXMessage();
+            gu.ReadSDVXMessage();
 
         }
 
@@ -235,13 +261,14 @@ namespace MiniSDVX_Windows
             saveFileDialog.FileName = "MiniSDVX";
             saveFileDialog.FilterIndex = 2;
             saveFileDialog.RestoreDirectory = true;
-            if (saveFileDialog.ShowDialog() == true) {
-                if(GeneralUtils.WriteJson(dataPack, saveFileDialog.FileName, SendWarningMessage))
+            if (saveFileDialog.ShowDialog() == true)
+            {
+                if (GeneralUtils.WriteJson(dataPack, saveFileDialog.FileName, SendWarningMessage))
                 {
                     SendSuccessMessage("文件写入成功");
                 }
-        }
-        
+            }
+
         }
         private void GetJson(object sender, RoutedEventArgs e)
         {
@@ -255,7 +282,7 @@ namespace MiniSDVX_Windows
                 if (dp != null && dp.KeyItems != null)
                 {
                     dataPack = dp;
-                    foreach(KeyItem keyItem in dp.KeyItems)
+                    foreach (KeyItem keyItem in dp.KeyItems)
                     {
                         Button? btn = (Button?)FindName(keyItem.Name);
                         if (btn != null && keyItem.KeyString != null)
@@ -267,7 +294,7 @@ namespace MiniSDVX_Windows
                             }
                             btn.FontSize = fontsize;
                             btn.Content = keyItem.KeyString;
-                            
+
 
                         }
                     }
@@ -287,7 +314,7 @@ namespace MiniSDVX_Windows
                 if (connectButton != null)
                 {
 
-                   
+
                     connectButton.Dispatcher.Invoke(new Action(delegate
                     {
                         if (writeButton != null)
@@ -326,8 +353,8 @@ namespace MiniSDVX_Windows
         protected override void OnMouseDoubleClick(MouseButtonEventArgs e)
         {
             base.OnMouseDoubleClick(e);
-            if(e.ChangedButton == MouseButton.Right)
-    {
+            if (e.ChangedButton == MouseButton.Right)
+            {
                 DrawerLeft.IsOpen = true;
             }
 
@@ -346,10 +373,10 @@ namespace MiniSDVX_Windows
             // 如果鼠标位置在标题栏内，允许拖动  
             if (e.LeftButton == MouseButtonState.Pressed)
             {
-                    this.DragMove();
-                
+                this.DragMove();
+
             }
-        }  
+        }
 
 
     }

@@ -104,6 +104,46 @@ CMakeFiles/Mini_SDVX.elf.dir/BSP/Src/bsp_encoder.c.obj
  E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pcd.h
  E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_usb.h
  E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pcd_ex.h
+ E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usb_device.h
+ E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Core/Inc/usbd_def.h
+ E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Target/usbd_conf.h
+ E:/Env/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/stdio.h
+ E:/Env/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/_ansi.h
+ E:/Env/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/newlib.h
+ E:/Env/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/config.h
+ E:/Env/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/machine/ieeefp.h
+ E:/Env/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/cdefs.h
+ E:/Env/gcc-arm-none-eabi-10.3-2021.10/lib/gcc/arm-none-eabi/10.3.1/include/stdarg.h
+ E:/Env/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/reent.h
+ E:/Env/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/_ansi.h
+ E:/Env/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/_types.h
+ E:/Env/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/machine/_types.h
+ E:/Env/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/lock.h
+ E:/Env/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/types.h
+ E:/Env/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/machine/endian.h
+ E:/Env/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/machine/_endian.h
+ E:/Env/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/select.h
+ E:/Env/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/_sigset.h
+ E:/Env/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/_timeval.h
+ E:/Env/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/timespec.h
+ E:/Env/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/_timespec.h
+ E:/Env/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/_pthreadtypes.h
+ E:/Env/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/sched.h
+ E:/Env/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/machine/types.h
+ E:/Env/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/stdio.h
+ E:/Env/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/stdlib.h
+ E:/Env/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/machine/stdlib.h
+ E:/Env/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/alloca.h
+ E:/Env/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/string.h
+ E:/Env/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/_locale.h
+ E:/Env/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/strings.h
+ E:/Env/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/string.h
+ E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Class/HID_MOUSE/Inc/usbd_hid_mouse.h
+ E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Core/Inc/usbd_ioreq.h
+ E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Core/Inc/usbd_def.h
+ E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Core/Inc/usbd_core.h
+ E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Core/Inc/usbd_ioreq.h
+ E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Core/Inc/usbd_ctlreq.h
 
 CMakeFiles/Mini_SDVX.elf.dir/BSP/Src/bsp_key.c.obj
  E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/BSP/Src/bsp_key.c
@@ -493,6 +533,7 @@ CMakeFiles/Mini_SDVX.elf.dir/Core/Src/main.c.obj
  E:/Env/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/strings.h
  E:/Env/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/string.h
  E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/BSP/Inc/bsp.h
+ E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/BSP/Inc/bsp_rgb.h
 
 CMakeFiles/Mini_SDVX.elf.dir/Core/Src/spi.c.obj
  E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/Core/Src/spi.c
@@ -2144,7 +2185,6 @@ CMakeFiles/Mini_SDVX.elf.dir/Middlewares/Third_Party/AL94_USB_Composite/COMPOSIT
  E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/Core/Inc/tim.h
  E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/Core/Inc/main.h
  E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/Core/Inc/i2c.h
- E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/BSP/Inc/bsp.h
 
 CMakeFiles/Mini_SDVX.elf.dir/Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usbd_desc.c.obj
  E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usbd_desc.c

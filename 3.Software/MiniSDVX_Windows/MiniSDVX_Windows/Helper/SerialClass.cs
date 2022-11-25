@@ -1,41 +1,41 @@
-﻿using System.Collections.Generic;
-using System.Diagnostics;
+﻿using System.Diagnostics;
 using System.Management;
-using System.Printing;
 
 namespace MiniSDVX_Windows.Helper
 {
 
 
-public class SerialClass
-{
-    public static string GetPorts()
+    public class SerialClass
     {
-
-        using (ManagementObjectSearcher searcher = new ManagementObjectSearcher("SELECT * FROM Win32_PnPEntity")) //调用 WMI，获取 Win32_PnPEntity，即所有设备
+        public static string GetPorts()
         {
-            var hardInfos = searcher.Get();
-            foreach (var hardInfo in hardInfos)
+
+            using (ManagementObjectSearcher searcher = new ManagementObjectSearcher("SELECT * FROM Win32_PnPEntity")) //调用 WMI，获取 Win32_PnPEntity，即所有设备
             {
-                if (hardInfo.Properties["Name"].Value != null){
-                    if (hardInfo.Properties["Name"].Value.ToString()!.Contains("COM"))
+                var hardInfos = searcher.Get();
+                foreach (var hardInfo in hardInfos)
+                {
+                    if (hardInfo.Properties["Name"].Value != null)
                     {
-                        string name = hardInfo.Properties["Name"].Value + "";
-                        if(hardInfo.Properties["DeviceID"].Value != null && (hardInfo.Properties["DeviceID"].Value+"").Contains("VID_0483&PID_52A4")){
-                        Debug.WriteLine("-----" + name + "------");
-                        int p = name.IndexOf('(');
-                            if (name.Contains("COM"))
+                        if (hardInfo.Properties["Name"].Value.ToString()!.Contains("COM"))
+                        {
+                            string name = hardInfo.Properties["Name"].Value + "";
+                            if (hardInfo.Properties["DeviceID"].Value != null && (hardInfo.Properties["DeviceID"].Value + "").Contains("VID_0483&PID_52A4"))
                             {
-                                return name.Substring(p + 1, name.Length - p - 2);
+                                Debug.WriteLine("-----" + name + "------");
+                                int p = name.IndexOf('(');
+                                if (name.Contains("COM"))
+                                {
+                                    return name.Substring(p + 1, name.Length - p - 2);
+                                }
                             }
                         }
                     }
                 }
+                searcher.Dispose();
             }
-            searcher.Dispose();
-        }
 
-        return "";
+            return "";
+        }
     }
-}
 }
