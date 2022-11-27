@@ -28,25 +28,25 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 64,
+				"line" : 79,
 				"parent" : 0
 			},
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 60,
+				"line" : 75,
 				"parent" : 0
 			},
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 61,
+				"line" : 76,
 				"parent" : 0
 			},
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 62,
+				"line" : 77,
 				"parent" : 0
 			},
 			{
@@ -76,7 +76,7 @@
 			{
 				"command" : 3,
 				"file" : 0,
-				"line" : 54,
+				"line" : 69,
 				"parent" : 0
 			},
 			{
@@ -154,10 +154,6 @@
 				},
 				{
 					"backtrace" : 10,
-					"path" : "E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/BSP/Inc"
-				},
-				{
-					"backtrace" : 10,
 					"path" : "E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/Composite"
 				},
 				{
@@ -203,6 +199,10 @@
 				{
 					"backtrace" : 10,
 					"path" : "E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Class/HID_MOUSE/Inc"
+				},
+				{
+					"backtrace" : 10,
+					"path" : "E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/BSP/Inc"
 				}
 			],
 			"language" : "C",
@@ -339,10 +339,6 @@
 				},
 				{
 					"backtrace" : 10,
-					"path" : "E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/BSP/Inc"
-				},
-				{
-					"backtrace" : 10,
 					"path" : "E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/Composite"
 				},
 				{
@@ -388,6 +384,10 @@
 				{
 					"backtrace" : 10,
 					"path" : "E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Class/HID_MOUSE/Inc"
+				},
+				{
+					"backtrace" : 10,
+					"path" : "E:/BaiduSyncdisk/Project/Development/Hardware/MiniSDVX/3.Software/Mini_SDVX_BSP/BSP/Inc"
 				}
 			],
 			"language" : "ASM",

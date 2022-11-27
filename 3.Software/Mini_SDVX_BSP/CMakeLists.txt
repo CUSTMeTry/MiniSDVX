@@ -49,7 +49,22 @@ else ()
     add_compile_options(-Og -g)
 endif ()
 
-include_directories(Core/Inc BSP/Inc Composite Drivers/STM32F4xx_HAL_Driver/Inc Drivers/STM32F4xx_HAL_Driver/Inc/Legacy Drivers/CMSIS/Device/ST/STM32F4xx/Include Drivers/CMSIS/Include Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Class/COMPOSITE/Inc Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Class/HID_KEYBOARD/Inc Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Core/Inc Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Target Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Class/CDC_ACM/Inc Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Class/HID_MOUSE/Inc)
+include_directories(
+        Core/Inc
+        Composite
+        Drivers/STM32F4xx_HAL_Driver/Inc
+        Drivers/STM32F4xx_HAL_Driver/Inc/Legacy
+        Drivers/CMSIS/Device/ST/STM32F4xx/Include
+        Drivers/CMSIS/Include
+        Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Class/COMPOSITE/Inc
+        Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Class/HID_KEYBOARD/Inc
+        Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Core/Inc
+        Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App
+        Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Target
+        Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Class/CDC_ACM/Inc
+        Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Class/HID_MOUSE/Inc
+        BSP/Inc
+)
 
 add_definitions(-DUSE_HAL_DRIVER -DSTM32F401xC)
 
